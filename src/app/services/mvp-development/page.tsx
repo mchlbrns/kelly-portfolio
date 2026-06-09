@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Layers, CheckCircle, BookOpen } from "lucide-react";
+import { ArrowLeft, Layers, CheckCircle, BookOpen } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

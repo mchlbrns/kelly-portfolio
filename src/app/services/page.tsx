@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Services } from "@/components/Services";
-import { ArrowLeft, ArrowRight, Brain, Code2, Cpu, Workflow, Layers, CheckCircle } from "lucide-react";
+import { ArrowRight, Code2, Cpu, Workflow, Layers } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

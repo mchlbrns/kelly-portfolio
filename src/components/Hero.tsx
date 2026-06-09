@@ -42,7 +42,7 @@ export function Hero() {
 
             <div className="opacity-0 animate-fade-in-up animation-delay-100">
               <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mb-12 leading-relaxed">
-                Stop losing hours to repetitive, manual tasks. I design and build production-ready full-stack applications and automated pipelines that reclaim your team's time, integrate modern AI capabilities, and eliminate operational bottlenecks.
+                Stop losing hours to repetitive, manual tasks. I design and build production-ready full-stack applications and automated pipelines that reclaim your team&apos;s time, integrate modern AI capabilities, and eliminate operational bottlenecks.
               </p>
             </div>
 

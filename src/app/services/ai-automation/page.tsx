@@ -1,6 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
-import { ArrowLeft, ArrowRight, Cpu, CheckCircle, BookOpen, AlertCircle } from "lucide-react";
+import { ArrowLeft, Cpu, CheckCircle, BookOpen } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -193,7 +192,7 @@ export default function AIAutomationPage() {
 
             <section className="bg-white dark:bg-gray-900 p-6 border border-gray-200 dark:border-gray-800 rounded-3xl" aria-labelledby="cta-heading">
               <h3 id="cta-heading" className="text-lg font-bold mb-2 text-gray-900 dark:text-white">AI Strategy Session</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 font-medium">Let's walk through your data workflows and identify the highest ROI automation opportunities.</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 font-medium">Let&apos;s walk through your data workflows and identify the highest ROI automation opportunities.</p>
               <Link
                 href="/contact"
                 className="w-full flex justify-center py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold text-center shadow-sm active:scale-95 transition-all"

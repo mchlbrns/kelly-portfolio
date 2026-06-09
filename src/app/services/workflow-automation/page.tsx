@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Workflow, CheckCircle, BookOpen } from "lucide-react";
+import { ArrowLeft, Workflow, CheckCircle, BookOpen } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -206,7 +206,7 @@ export default function WorkflowAutomationPage() {
 
             <section className="bg-white dark:bg-gray-900 p-6 border border-gray-200 dark:border-gray-800 rounded-3xl" aria-labelledby="cta-heading">
               <h3 id="cta-heading" className="text-lg font-bold mb-2 text-gray-900 dark:text-white">Free Audit</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 font-medium">Let's analyze your manual data entry workflows and build a custom scripting quote.</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 font-medium">Let&apos;s analyze your manual data entry workflows and build a custom scripting quote.</p>
               <Link
                 href="/contact"
                 className="w-full flex justify-center py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold text-center shadow-sm active:scale-95 transition-all"

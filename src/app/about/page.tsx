@@ -87,7 +87,7 @@ export default function AboutPage() {
         <div className="mt-12 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-[2.5rem] p-8 md:p-12 text-center shadow-sm">
           <h2 className="text-3xl font-black mb-4">Start Automating Your Workflows Today</h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8 font-medium">
-            Let's discuss how we can eliminate your business operations bottlenecks. Book a consultation or send a message directly.
+            Let&apos;s discuss how we can eliminate your business operations bottlenecks. Book a consultation or send a message directly.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
