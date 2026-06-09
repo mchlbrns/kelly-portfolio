@@ -51,7 +51,7 @@ export function Contact() {
             transition={{ duration: 0.5 }}
             className="text-3xl md:text-4xl font-bold mb-4"
           >
-            Ready to Build Something?
+            Contact Me: Hire a Full-Stack Developer & MVP Developer
           </m.h2>
           <m.p
             initial={{ opacity: 0, y: 20 }}

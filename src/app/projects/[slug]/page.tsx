@@ -23,15 +23,28 @@ export async function generateMetadata({ params }: RouteProps): Promise<Metadata
   return {
     title: `${project.title} | Michael Briones Case Study`,
     description: project.problem,
+    alternates: {
+      canonical: `/projects/${slug}`,
+    },
     openGraph: {
       title: `${project.title} | Michael Briones Case Study`,
       description: project.problem,
+      url: `https://kelly-portfolio-delta.vercel.app/projects/${slug}`,
+      siteName: "Michael Briones Portfolio",
+      locale: "en_US",
+      type: "article",
       images: [
         {
           url: project.imageUrl,
           alt: project.imageAlt,
         },
       ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.title} | Michael Briones Case Study`,
+      description: project.problem,
+      images: [project.imageUrl],
     },
   };
 }

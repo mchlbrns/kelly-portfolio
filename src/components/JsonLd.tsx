@@ -5,9 +5,14 @@ export function JsonLd() {
     "@type": "Person",
     "@id": "https://kelly-portfolio-delta.vercel.app/#person",
     name: "Michael Briones",
-    jobTitle: "Full Stack Developer & Automation Specialist",
+    jobTitle: "Freelance Full-Stack & AI Automation Developer",
     url: "https://kelly-portfolio-delta.vercel.app",
-    description: "Specializing in Full Stack Development, AI Integration, Workflow Automation, and Custom Software Development to help businesses eliminate manual bottlenecks and scale operations.",
+    description: "Freelance full-stack & AI automation developer. I build custom Next.js web apps and workflow automations to help businesses cut costs and scale.",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Quezon City",
+      addressCountry: "Philippines"
+    },
     sameAs: [
       "https://github.com/mchlbrns",
       "https://www.linkedin.com/in/michael-b-4568a2184/",
@@ -31,7 +36,7 @@ export function JsonLd() {
     "@type": "WebSite",
     "@id": "https://kelly-portfolio-delta.vercel.app/#website",
     url: "https://kelly-portfolio-delta.vercel.app",
-    name: "Michael Briones | Full-Stack & AI Automation Developer Portfolio",
+    name: "Michael Briones | Freelance Full-Stack & AI Automation Developer",
     publisher: {
       "@id": "https://kelly-portfolio-delta.vercel.app/#person"
     }

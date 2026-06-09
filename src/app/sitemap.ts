@@ -1,12 +1,30 @@
 import { MetadataRoute } from 'next'
+import { projects } from '@/data/projects'
  
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
+  const baseUrl = 'https://kelly-portfolio-delta.vercel.app'
+  
+  const routes = [
     {
-      url: 'https://kelly-portfolio-delta.vercel.app',
+      url: baseUrl,
       lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 1,
+      changeFrequency: 'monthly' as const,
+      priority: 1.0,
+    },
+    {
+      url: `${baseUrl}/resume`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
     },
   ]
+
+  const projectRoutes = projects.map((project) => ({
+    url: `${baseUrl}/projects/${project.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
+
+  return [...routes, ...projectRoutes]
 }

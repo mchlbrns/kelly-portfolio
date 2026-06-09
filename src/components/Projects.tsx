@@ -32,7 +32,7 @@ export function Projects() {
             transition={{ duration: 0.5 }}
             className="text-3xl md:text-4xl font-bold mb-4"
           >
-            Featured Work
+            Projects: Case Studies on this Next.js Developer Portfolio Website
           </m.h2>
           <m.p
             initial={{ opacity: 0, y: 20 }}
@@ -131,7 +131,7 @@ export function Projects() {
                         href={`/projects/${project.slug}`}
                         className="flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
                       >
-                        Read Case Study <BookOpen size={18} />
+                        View Project Case Study <BookOpen size={18} />
                       </Link>
                       
                       {project.liveUrl && !project.liveUrl.includes("example.com") && (

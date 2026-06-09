@@ -15,17 +15,17 @@ export function About() {
             className="lg:w-1/2"
           >
             <div className="inline-block px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 text-sm font-bold rounded-md mb-6 uppercase tracking-widest">
-              My Mission
+              About Me
             </div>
             <h2 className="text-4xl md:text-5xl font-black mb-8 leading-tight">
-              I build scalable web apps and workflow automations that cut operating costs.
+              About Michael Briones: Freelance Developer & AI Automation Developer
             </h2>
             <div className="space-y-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               <p>
-                I help businesses and teams eliminate repetitive, time-consuming manual workflows. By combining modern frontends with powerful Python backends and custom scripting, I design custom systems that optimize how businesses operate.
+                Welcome to my portfolio website. I am a freelance developer, full-stack developer, and AI automation developer specializing in building scalable web apps and workflow integrations that cut operating costs. By combining modern React frameworks with robust backends and custom scripts, I design custom solutions that optimize how businesses operate.
               </p>
               <p>
-                Whether you need a full-stack Next.js/Django application, custom AI agents utilizing the OpenAI API, automated scraping pipelines using Selenium, or robust AutoHotkey/Autoit scripting to streamline Excel and desktop operations, I deliver high-quality code focused on ROI.
+                Whether you need a Next.js developer to build a responsive web application, an MVP developer to rapidly launch a prototype startup, or custom scripting to automate desktop tasks, I deliver production-ready code. I design systems using Next.js, Django, Python, Selenium, and AutoHotkey to help clients save hours of manual work weekly.
               </p>
             </div>
           </m.div>

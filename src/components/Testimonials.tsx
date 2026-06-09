@@ -33,7 +33,7 @@ export function Testimonials() {
             transition={{ duration: 0.5 }}
             className="text-3xl md:text-4xl font-bold mb-4"
           >
-            What Clients Say
+            Testimonials: Client Reviews for a Freelance Next.js & MVP Developer
           </m.h2>
         </div>
 

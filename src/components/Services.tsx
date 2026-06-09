@@ -76,7 +76,7 @@ export function Services() {
             transition={{ duration: 0.5 }}
             className="text-4xl md:text-5xl font-black"
           >
-            Solutions built to drive <br /> growth & operating efficiency.
+            Services: Full-Stack Developer & AI Automation Solutions
           </m.h2>
         </div>
 
