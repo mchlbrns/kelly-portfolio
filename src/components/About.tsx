@@ -18,14 +18,14 @@ export function About() {
               About Me
             </div>
             <h2 className="text-4xl md:text-5xl font-black mb-8 leading-tight">
-              About Michael Briones: Freelance Developer & AI Automation Developer
+              AI Automation & Full-Stack Development
             </h2>
-            <div className="space-y-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+            <div className="space-y-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed font-medium">
               <p>
-                Welcome to my portfolio website. I am a freelance developer, full-stack developer, and AI automation developer specializing in building scalable web apps and workflow integrations that cut operating costs. By combining modern React frameworks with robust backends and custom scripts, I design custom solutions that optimize how businesses operate.
+                I am a full-stack engineer and AI automation specialist dedicated to building clean, secure web portals and operational integrations. By combining modern React systems with robust backends and custom scripting, I design custom software that streamlines how teams execute manual workflows.
               </p>
               <p>
-                Whether you need a Next.js developer to build a responsive web application, an MVP developer to rapidly launch a prototype startup, or custom scripting to automate desktop tasks, I deliver production-ready code. I design systems using Next.js, Django, Python, Selenium, and AutoHotkey to help clients save hours of manual work weekly.
+                Whether you need a Next.js developer to launch a responsive customer portal, an MVP developer to iterate a new SaaS idea, or desktop scripting to automate system pipelines, I deliver production-ready code. I build custom solutions using Next.js, Django, Python, Selenium, and AutoHotkey to save hours of manual work weekly.
               </p>
             </div>
           </m.div>

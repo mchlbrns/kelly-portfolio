@@ -1,13 +1,15 @@
 "use client";
 
 import { m } from "framer-motion";
+import Link from "next/link";
 import { 
   Code2, 
   Cpu, 
   Workflow, 
   Layers, 
   Terminal, 
-  RefreshCw 
+  RefreshCw,
+  ArrowRight
 } from "lucide-react";
 
 const services = [
@@ -55,6 +57,15 @@ const services = [
   },
 ];
 
+const serviceLinks: Record<string, string> = {
+  "Custom Web Applications": "/services/custom-web-applications",
+  "Workflow Automation": "/services/workflow-automation",
+  "AI & LLM Integration": "/services/ai-automation",
+  "SaaS Product Development": "/services/mvp-development",
+  "API Design & Integration": "/services/custom-web-applications",
+  "Legacy Systems Modernization": "/services/custom-web-applications",
+};
+
 export function Services() {
   return (
     <section id="services" className="py-24 bg-gray-50/50 dark:bg-gray-950/20 border-t border-gray-100 dark:border-gray-900">
@@ -76,7 +87,7 @@ export function Services() {
             transition={{ duration: 0.5 }}
             className="text-4xl md:text-5xl font-black"
           >
-            Services: Full-Stack Developer & AI Automation Solutions
+            AI Automation & Full-Stack Development Services
           </m.h2>
         </div>
 
@@ -88,27 +99,39 @@ export function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="group relative p-8 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-[2.5rem] hover:border-blue-500/50 dark:hover:border-blue-400/50 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 flex flex-col"
+              className="group relative p-8 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-[2.5rem] hover:border-blue-500/50 dark:hover:border-blue-400/50 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 flex flex-col justify-between"
             >
-              <div className="mb-6 p-4 bg-gray-50 dark:bg-gray-950 w-fit rounded-2xl group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 border border-gray-200 dark:border-gray-800">
-                {service.icon}
+              <div>
+                <div className="mb-6 p-4 bg-gray-50 dark:bg-gray-950 w-fit rounded-2xl group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 border border-gray-200 dark:border-gray-800">
+                  {service.icon}
+                </div>
+
+                <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">{service.title}</h3>
+
+                <div className="space-y-4 flex-grow mb-8 text-base">
+                  <div>
+                    <span className="text-xs font-black text-red-500 dark:text-red-400 uppercase tracking-widest block mb-1">Problem</span>
+                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed font-medium">{service.problem}</p>
+                  </div>
+                  <div>
+                    <span className="text-xs font-black text-green-600 dark:text-green-400 uppercase tracking-widest block mb-1">Solution</span>
+                    <p className="text-gray-600 dark:text-gray-400 leading-relaxed font-medium">{service.solution}</p>
+                  </div>
+                  <div className="p-4 bg-blue-50/40 dark:bg-blue-950/20 border border-blue-100/50 dark:border-blue-900/30 rounded-2xl mt-4">
+                    <span className="text-xs font-black text-blue-600 dark:text-blue-400 uppercase tracking-widest block mb-1">Outcome</span>
+                    <p className="text-gray-900 dark:text-gray-100 leading-relaxed font-bold">{service.outcome}</p>
+                  </div>
+                </div>
               </div>
 
-              <h3 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">{service.title}</h3>
-
-              <div className="space-y-4 flex-grow mb-8 text-base">
-                <div>
-                  <span className="text-xs font-black text-red-500 dark:text-red-400 uppercase tracking-widest block mb-1">Problem</span>
-                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed font-medium">{service.problem}</p>
-                </div>
-                <div>
-                  <span className="text-xs font-black text-green-600 dark:text-green-400 uppercase tracking-widest block mb-1">Solution</span>
-                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed font-medium">{service.solution}</p>
-                </div>
-                <div className="p-4 bg-blue-50/40 dark:bg-blue-950/20 border border-blue-100/50 dark:border-blue-900/30 rounded-2xl mt-4">
-                  <span className="text-xs font-black text-blue-600 dark:text-blue-400 uppercase tracking-widest block mb-1">Outcome</span>
-                  <p className="text-gray-900 dark:text-gray-100 leading-relaxed font-bold">{service.outcome}</p>
-                </div>
+              <div className="pt-4 border-t border-gray-100 dark:border-gray-800/50 flex justify-end mt-auto">
+                <Link
+                  href={serviceLinks[service.title] || "/services"}
+                  className="group/btn inline-flex items-center gap-1.5 text-sm font-bold text-blue-600 dark:text-blue-400 hover:underline"
+                >
+                  Service Details
+                  <ArrowRight className="group-hover/btn:translate-x-0.5 transition-transform" size={14} />
+                </Link>
               </div>
             </m.div>
           ))}

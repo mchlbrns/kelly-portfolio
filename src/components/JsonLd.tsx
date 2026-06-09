@@ -55,11 +55,28 @@ export function JsonLd() {
     url: project.liveUrl || `https://kelly-portfolio-delta.vercel.app/projects/${project.slug}`
   }));
 
+  const serviceSchema = {
+    "@type": "ProfessionalService",
+    "@id": "https://kelly-portfolio-delta.vercel.app/#service",
+    name: "Michael Briones Development Services",
+    url: "https://kelly-portfolio-delta.vercel.app",
+    image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=1200&h=630",
+    description: "Freelance full-stack & AI automation developer. I build custom Next.js web apps and workflow automations to help businesses cut costs and scale.",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Quezon City",
+      addressCountry: "Philippines"
+    },
+    priceRange: "$$",
+    areaServed: "Worldwide"
+  };
+
   const jsonLdGraph = {
     "@context": "https://schema.org",
     "@graph": [
       personSchema,
       websiteSchema,
+      serviceSchema,
       ...creativeWorks
     ]
   };

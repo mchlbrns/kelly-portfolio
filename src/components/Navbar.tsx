@@ -98,11 +98,11 @@ export function Navbar() {
   }, [isOpen]);
 
   const navLinks = [
-    { name: "About", href: "/#about", id: "about" },
-    { name: "Services", href: "/#services", id: "services" },
+    { name: "About", href: "/about", id: "about" },
+    { name: "Services", href: "/services", id: "services" },
     { name: "Work", href: "/#work", id: "work" },
     { name: "Resume", href: "/resume", id: "resume" },
-    { name: "Contact", href: "/#contact", id: "contact" },
+    { name: "Contact", href: "/contact", id: "contact" },
   ];
 
   return (

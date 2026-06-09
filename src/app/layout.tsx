@@ -13,8 +13,8 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
-  title: "Michael Briones | Freelance Full-Stack & AI Automation Developer",
-  description: "Freelance full-stack & AI automation developer. I build custom Next.js web apps and workflow automations to help businesses cut costs and scale.",
+  title: "Michael Briones | AI Automation & Full-Stack Developer",
+  description: "AI automation & full-stack developer Michael Briones builds custom web apps, vector database integrations, and automated pipelines to cut operational costs.",
   metadataBase: new URL("https://kelly-portfolio-delta.vercel.app"),
   alternates: {
     canonical: "/",
@@ -36,8 +36,8 @@ export const metadata: Metadata = {
     icon: "/favicon.ico",
   },
   openGraph: {
-    title: "Michael Briones | Freelance Full-Stack & AI Automation Developer",
-    description: "Freelance full-stack & AI automation developer. I build custom Next.js web apps and workflow automations to help businesses cut costs and scale.",
+    title: "Michael Briones | AI Automation & Full-Stack Developer",
+    description: "AI automation & full-stack developer Michael Briones builds custom web apps, vector database integrations, and automated pipelines to cut operational costs.",
     url: "https://kelly-portfolio-delta.vercel.app",
     siteName: "Michael Briones Portfolio",
     locale: "en_US",
@@ -47,14 +47,14 @@ export const metadata: Metadata = {
         url: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=1200&h=630",
         width: 1200,
         height: 630,
-        alt: "Michael Briones | Freelance Full-Stack & AI Automation Developer Portfolio",
+        alt: "Michael Briones | AI Automation & Full-Stack Developer Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Michael Briones | Freelance Full-Stack & AI Automation Developer",
-    description: "Freelance full-stack & AI automation developer. I build custom Next.js web apps and workflow automations to help businesses cut costs and scale.",
+    title: "Michael Briones | AI Automation & Full-Stack Developer",
+    description: "AI automation & full-stack developer Michael Briones builds custom web apps, vector database integrations, and automated pipelines to cut operational costs.",
     images: ["https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=1200&h=630"],
   },
 };

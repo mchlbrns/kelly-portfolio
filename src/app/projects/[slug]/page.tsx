@@ -2,7 +2,7 @@ import { projects } from "@/data/projects";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ExternalLink, Github, CheckCircle, Code2, Layers, AlertCircle, BookOpen } from "lucide-react";
+import { ArrowLeft, ExternalLink, Github, CheckCircle, Code2, Layers, AlertCircle, BookOpen, ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 
 interface RouteProps {
@@ -234,6 +234,37 @@ export default async function ProjectPage({ params }: RouteProps) {
                       <span className="text-sm text-gray-400 dark:text-gray-500 italic">No external links available for this internal automation project.</span>
                     )}
                   </div>
+                </div>
+
+                <div className="border-t border-gray-150 dark:border-gray-800 pt-6 mt-6">
+                  <h4 className="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-3">Service Focus</h4>
+                  {project.category === "AI Automation" && (
+                    <Link
+                      href="/services/ai-automation"
+                      className="group inline-flex items-center gap-1.5 text-sm font-bold text-blue-600 dark:text-blue-400 hover:underline"
+                    >
+                      AI Automation Services
+                      <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
+                    </Link>
+                  )}
+                  {project.category === "Full Stack" && (
+                    <Link
+                      href="/services/custom-web-applications"
+                      className="group inline-flex items-center gap-1.5 text-sm font-bold text-blue-600 dark:text-blue-400 hover:underline"
+                    >
+                      Web Application Services
+                      <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
+                    </Link>
+                  )}
+                  {project.category === "Workflow Automation" && (
+                    <Link
+                      href="/services/workflow-automation"
+                      className="group inline-flex items-center gap-1.5 text-sm font-bold text-blue-600 dark:text-blue-400 hover:underline"
+                    >
+                      Workflow Automation Services
+                      <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
+                    </Link>
+                  )}
                 </div>
               </div>
             </aside>

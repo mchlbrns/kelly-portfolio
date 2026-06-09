@@ -32,17 +32,17 @@ export function Hero() {
               <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-[1.1] mb-8">
                 Michael Briones. <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500 dark:from-blue-400 dark:to-cyan-400">
-                  Custom Software, AI Integrations & Business Automation.
+                  AI Automation & Full-Stack Developer
                 </span>
                 <span className="block text-xl md:text-2xl font-bold text-gray-500 dark:text-gray-400 mt-4 tracking-normal">
-                  I help businesses save time and reduce manual work through custom software, AI integrations, and workflow automation.
+                  Building custom web apps and workflow automations to streamline operations, cut costs, and scale your business.
                 </span>
               </h1>
             </div>
 
             <div className="opacity-0 animate-fade-in-up animation-delay-100">
               <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mb-12 leading-relaxed">
-                Stop losing hours to repetitive tasks. I engineer robust web applications and automated system pipelines (Next.js, Python, Django, and AutoHotkey) that streamline your operations, reduce overhead, and scale operations.
+                Stop losing hours to repetitive, manual tasks. I design and build production-ready full-stack applications and automated pipelines that reclaim your team's time, integrate modern AI capabilities, and eliminate operational bottlenecks.
               </p>
             </div>
 
