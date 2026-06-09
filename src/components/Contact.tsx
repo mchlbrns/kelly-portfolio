@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Send, CheckCircle, Loader2 } from "lucide-react";
 
 export function Contact() {
@@ -43,7 +43,7 @@ export function Contact() {
     <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-900/50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <motion.h2
+          <m.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -51,8 +51,8 @@ export function Contact() {
             className="text-3xl md:text-4xl font-bold mb-4"
           >
             Ready to Build Something?
-          </motion.h2>
-          <motion.p
+          </m.h2>
+          <m.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -60,10 +60,10 @@ export function Contact() {
             className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
           >
             Let&apos;s discuss how we can transform your ideas into reality. Fill out the form below or book a discovery call.
-          </motion.p>
+          </m.p>
         </div>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -178,7 +178,7 @@ export function Contact() {
               </button>
             </form>
           )}
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

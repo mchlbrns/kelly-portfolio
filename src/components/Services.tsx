@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Code2, Sparkles, Rocket } from "lucide-react";
 
 const services = [
@@ -29,7 +29,7 @@ export function Services() {
     <section id="services" className="py-20 bg-gray-50 dark:bg-gray-900/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <motion.h2
+          <m.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -37,8 +37,8 @@ export function Services() {
             className="text-3xl md:text-4xl font-bold mb-4"
           >
             Services & Offerings
-          </motion.h2>
-          <motion.p
+          </m.h2>
+          <m.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -46,12 +46,12 @@ export function Services() {
             className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
           >
             Specialized solutions designed to help your business scale efficiently and stand out in the digital landscape.
-          </motion.p>
+          </m.p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <motion.div
+            <m.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -85,7 +85,7 @@ export function Services() {
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>
