@@ -3,7 +3,8 @@
 import { useActionState, useState, useEffect } from "react";
 import { m } from "framer-motion";
 import { Send, CheckCircle, Loader2 } from "lucide-react";
-import { submitContactForm, contactSchema } from "@/app/actions/contact";
+import { submitContactForm } from "@/app/actions/contact";
+import { contactSchema } from "@/app/actions/contactSchema";
 
 export function ContactSkeleton() {
   return (
