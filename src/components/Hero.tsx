@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ArrowRight, Calendar, Download } from "lucide-react";
 
 export function Hero() {
-  const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL || "#";
+  const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL || "#";
 
   return (
     <section className="relative overflow-hidden pt-32 pb-20 lg:pt-48 lg:pb-32">
@@ -61,7 +61,7 @@ export function Hero() {
             <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
           </Link>
           <a
-            href="https://cal.com/michael-briones/discovery"
+            href={bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center gap-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-200 dark:hover:bg-blue-900/50 transition-all border border-blue-200 dark:border-blue-800"

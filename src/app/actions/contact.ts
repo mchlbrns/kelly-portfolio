@@ -39,12 +39,33 @@ export async function submitContactForm(
     };
   }
 
-  // Here you would typically send an email or save to a database.
-  // For the portfolio, we will simulate success.
+  // =========================================================================
+  // PRODUCTION NOTE:
+  // Currently, this form only logs to the server console (viewable in Vercel logs).
+  // To receive real email notifications, you can use a service like Resend.
+  // 1. Run: pnpm add resend
+  // 2. Uncomment the code below and add your RESEND_API_KEY to .env
+  // =========================================================================
+  
   console.log("Form submitted successfully:", validatedData.data);
+
+  /*
+  const resend = new Resend(process.env.RESEND_API_KEY);
+  await resend.emails.send({
+    from: 'Portfolio <onboarding@resend.dev>',
+    to: process.env.CONTACT_EMAIL_TO || 'your-email@example.com',
+    subject: `New Project Inquiry from ${validatedData.data.name}`,
+    text: `
+      Name: ${validatedData.data.name}
+      Email: ${validatedData.data.email}
+      Project Type: ${validatedData.data.projectType}
+      Message: ${validatedData.data.message}
+    `,
+  });
+  */
 
   return {
     status: "success",
-    message: "Thank you for reaching out. I'll get back to you within 24 hours.",
+    message: "Thank you for reaching out. I've received your message and will get back to you within 24 hours.",
   };
 }
