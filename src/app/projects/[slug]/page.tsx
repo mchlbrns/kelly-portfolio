@@ -150,6 +150,15 @@ export default async function ProjectPage({ params }: RouteProps) {
               <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">{project.results}</p>
             </section>
 
+            {/* Client Value section */}
+            <section className="bg-white dark:bg-gray-900 p-8 md:p-10 border border-gray-200 dark:border-gray-800 rounded-3xl" aria-labelledby="clientvalue-heading">
+              <h2 id="clientvalue-heading" className="text-2xl font-bold mb-4 text-gray-900 dark:text-white flex items-center gap-2.5">
+                <CheckCircle className="text-purple-500" size={24} />
+                Client Value & Business Impact
+              </h2>
+              <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">{project.clientValue}</p>
+            </section>
+
             {/* Lessons section */}
             <section className="bg-white dark:bg-gray-900 p-8 md:p-10 border border-gray-200 dark:border-gray-800 rounded-3xl" aria-labelledby="lessons-heading">
               <h2 id="lessons-heading" className="text-2xl font-bold mb-4 text-gray-900 dark:text-white flex items-center gap-2.5">

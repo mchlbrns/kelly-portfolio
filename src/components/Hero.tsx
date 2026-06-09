@@ -3,7 +3,7 @@
 import { m } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Calendar, FileText } from "lucide-react";
+import { ArrowRight, FileText } from "lucide-react";
 
 export function Hero() {
   const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL || "https://cal.com/michael-briones";
@@ -42,10 +42,10 @@ export function Hero() {
               <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-[1.1] mb-8">
                 Michael Briones. <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500 dark:from-blue-400 dark:to-cyan-400">
-                  Full-Stack AI Developer.
+                  Custom Software, AI Integrations & Business Automation.
                 </span>
-                <span className="block text-2xl md:text-3xl font-bold text-gray-500 dark:text-gray-400 mt-4 tracking-normal">
-                  Python, Django & Next.js | Build MVPs & Automations that Cut Costs
+                <span className="block text-xl md:text-2xl font-bold text-gray-500 dark:text-gray-400 mt-4 tracking-normal">
+                  I help businesses save time and reduce manual work through custom software, AI integrations, and workflow automation.
                 </span>
               </h1>
             </m.div>
@@ -56,7 +56,7 @@ export function Hero() {
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mb-12 leading-relaxed">
-                I build high-performance web applications and custom automation scripts that eliminate manual bottlenecks. From AI-powered MVPs to Django platforms and Selenium/AutoHotkey workflows, I turn complex requirements into clean, production-ready systems that scale.
+                Stop losing hours to repetitive tasks. I engineer robust web applications and automated system pipelines (Next.js, Python, Django, and AutoHotkey) that streamline your operations, reduce overhead, and scale operations.
               </p>
             </m.div>
 
@@ -64,24 +64,23 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex flex-wrap items-center gap-4"
+              className="flex flex-wrap items-center gap-4 animate-fade-in"
             >
-              <Link
-                href="#work"
-                className="group flex items-center gap-2 bg-gray-950 dark:bg-white text-white dark:text-gray-900 px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-[0_0_20px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] transition-all active:scale-95"
-              >
-                Explore Projects
-                <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
-              </Link>
               <a
                 href={bookingUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="group flex items-center gap-2 bg-blue-600 hover:bg-blue-750 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] transition-all active:scale-95 cursor-pointer"
+              >
+                Book a Free Consultation
+                <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+              </a>
+              <Link
+                href="#work"
                 className="group flex items-center gap-2 bg-white dark:bg-gray-900 text-gray-900 dark:text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-all border border-gray-200 dark:border-gray-800 shadow-sm active:scale-95"
               >
-                Schedule a Call
-                <Calendar size={20} />
-              </a>
+                See Case Studies
+              </Link>
               <a
                 href="https://www.upwork.com/freelancers/~0132fd165333fbdaa4?viewMode=1"
                 target="_blank"

@@ -35,6 +35,21 @@ const Projects = dynamic(
   )}
 );
 
+const WhyHireMe = dynamic(
+  () => import("@/components/WhyHireMe").then(mod => mod.WhyHireMe),
+  { loading: () => (
+    <div className="max-w-7xl mx-auto px-4 py-24 animate-pulse">
+      <div className="h-8 w-48 bg-gray-200 dark:bg-gray-800 rounded mb-6"></div>
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div className="h-48 bg-gray-100 dark:bg-gray-900 rounded-3xl"></div>
+        <div className="h-48 bg-gray-100 dark:bg-gray-900 rounded-3xl"></div>
+        <div className="h-48 bg-gray-100 dark:bg-gray-900 rounded-3xl"></div>
+        <div className="h-48 bg-gray-100 dark:bg-gray-900 rounded-3xl"></div>
+      </div>
+    </div>
+  )}
+);
+
 const Testimonials = dynamic(
   () => import("@/components/Testimonials").then(mod => mod.Testimonials),
   { loading: () => (
@@ -48,6 +63,16 @@ const Testimonials = dynamic(
     </div>
   )}
 );
+
+const ContactBanner = dynamic(
+  () => import("@/components/ContactBanner").then(mod => mod.ContactBanner),
+  { loading: () => (
+    <div className="max-w-7xl mx-auto px-4 py-12 animate-pulse">
+      <div className="h-48 w-full bg-gray-100 dark:bg-gray-900 rounded-[3rem]"></div>
+    </div>
+  )}
+);
+
 const Contact = dynamic(
   () => import("@/components/Contact").then(mod => mod.Contact),
   { loading: () => (
@@ -58,8 +83,10 @@ const Contact = dynamic(
     </div>
   )}
 );
+
 const ExitIntentPopup = dynamic(() => import("@/components/ExitIntentPopup").then(mod => mod.ExitIntentPopup));
 const Stats = dynamic(() => import("@/components/Stats").then(mod => mod.Stats));
+const StickyCTA = dynamic(() => import("@/components/StickyCTA").then(mod => mod.StickyCTA));
 const BackToTop = dynamic(() => import("@/components/BackToTop").then(mod => mod.BackToTop));
 
 export default function Home() {
@@ -70,8 +97,11 @@ export default function Home() {
       <Stats />
       <Services />
       <Projects />
+      <WhyHireMe />
       <Testimonials />
+      <ContactBanner />
       <Contact />
+      <StickyCTA />
       <ExitIntentPopup />
       <BackToTop />
     </>

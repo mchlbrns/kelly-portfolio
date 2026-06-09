@@ -11,15 +11,15 @@ import { JsonLd } from "@/components/JsonLd";
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
-  title: "Michael Briones | Full-Stack AI Developer & Automation Specialist",
-  description: "Experienced Full-Stack Python & AI Developer specializing in Next.js, Django, Selenium, and AutoHotkey workflow automations that cut costs and scale operations.",
+  title: "Michael Briones | Full Stack Developer & Automation Specialist",
+  description: "Specializing in Full Stack Development, AI Integration, Workflow Automation, and Custom Software Development to help businesses eliminate manual bottlenecks and scale operations.",
   metadataBase: new URL("https://kelly-portfolio-delta.vercel.app"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Michael Briones | Full-Stack AI Developer & Automation Specialist",
-    description: "Experienced Full-Stack Python & AI Developer specializing in Next.js, Django, Selenium, and AutoHotkey workflow automations that cut costs and scale operations.",
+    title: "Michael Briones | Full Stack Developer & Automation Specialist",
+    description: "Specializing in Full Stack Development, AI Integration, Workflow Automation, and Custom Software Development to help businesses eliminate manual bottlenecks and scale operations.",
     url: "https://kelly-portfolio-delta.vercel.app",
     siteName: "Michael Briones Portfolio",
     locale: "en_US",
@@ -29,14 +29,14 @@ export const metadata: Metadata = {
         url: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=1200&h=630",
         width: 1200,
         height: 630,
-        alt: "Michael Briones | Full-Stack & AI Automation Developer Portfolio",
+        alt: "Michael Briones | Full Stack Developer & Automation Specialist Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Michael Briones | Full-Stack AI Developer & Automation Specialist",
-    description: "Experienced Full-Stack Python & AI Developer specializing in Next.js, Django, Selenium, and AutoHotkey workflow automations that cut costs and scale operations.",
+    title: "Michael Briones | Full Stack Developer & Automation Specialist",
+    description: "Specializing in Full Stack Development, AI Integration, Workflow Automation, and Custom Software Development to help businesses eliminate manual bottlenecks and scale operations.",
     images: ["https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=1200&h=630"],
   },
 };

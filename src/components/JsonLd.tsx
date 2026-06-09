@@ -5,9 +5,9 @@ export function JsonLd() {
     "@type": "Person",
     "@id": "https://kelly-portfolio-delta.vercel.app/#person",
     name: "Michael Briones",
-    jobTitle: "Full-Stack AI Developer & Workflow Automation Specialist",
+    jobTitle: "Full Stack Developer & Automation Specialist",
     url: "https://kelly-portfolio-delta.vercel.app",
-    description: "Experienced Full-Stack Python & AI Developer specializing in Next.js, Django, Selenium, and AutoHotkey workflow automations that cut costs and scale operations.",
+    description: "Specializing in Full Stack Development, AI Integration, Workflow Automation, and Custom Software Development to help businesses eliminate manual bottlenecks and scale operations.",
     sameAs: [
       "https://github.com/mchlbrns",
       "https://www.linkedin.com/in/michael-b-4568a2184/",

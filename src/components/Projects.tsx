@@ -82,20 +82,34 @@ export function Projects() {
                     </div>
                     <h3 className="text-2xl md:text-3xl font-bold mb-6">{project.title}</h3>
 
-                    <div className="space-y-4 mb-8">
+                     <div className="space-y-4 mb-8">
                       <div>
-                        <h4 className="font-semibold text-gray-900 dark:text-white flex items-center gap-2">
-                          <span className="w-1.5 h-1.5 rounded-full bg-red-500"></span>
+                        <h4 className="font-bold text-gray-905 dark:text-white flex items-center gap-2 text-sm uppercase tracking-wider">
+                          <span className="w-2 h-2 rounded-full bg-red-500"></span>
                           The Problem
                         </h4>
-                        <p className="text-gray-600 dark:text-gray-400 mt-1">{project.problem}</p>
+                        <p className="text-gray-655 dark:text-gray-400 mt-1 text-sm font-medium">{project.problem}</p>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-gray-900 dark:text-white flex items-center gap-2">
-                          <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                        <h4 className="font-bold text-gray-905 dark:text-white flex items-center gap-2 text-sm uppercase tracking-wider">
+                          <span className="w-2 h-2 rounded-full bg-green-500"></span>
                           The Solution
                         </h4>
-                        <p className="text-gray-600 dark:text-gray-400 mt-1">{project.solution}</p>
+                        <p className="text-gray-655 dark:text-gray-400 mt-1 text-sm font-medium">{project.solution}</p>
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-gray-905 dark:text-white flex items-center gap-2 text-sm uppercase tracking-wider">
+                          <span className="w-2 h-2 rounded-full bg-blue-500"></span>
+                          Business Results
+                        </h4>
+                        <p className="text-gray-900 dark:text-gray-300 mt-1 text-sm font-bold">{project.results}</p>
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-gray-905 dark:text-white flex items-center gap-2 text-sm uppercase tracking-wider">
+                          <span className="w-2 h-2 rounded-full bg-purple-500"></span>
+                          Client Value
+                        </h4>
+                        <p className="text-gray-655 dark:text-gray-400 mt-1 text-sm font-medium italic">{project.clientValue}</p>
                       </div>
                     </div>
 
@@ -104,7 +118,7 @@ export function Projects() {
                         {project.tech.map((tech, i) => (
                           <span
                             key={i}
-                            className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-sm rounded-md text-gray-700 dark:text-gray-300 font-medium border border-gray-200 dark:border-gray-700"
+                            className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-xs rounded-md text-gray-700 dark:text-gray-300 font-bold border border-gray-200 dark:border-gray-700 uppercase tracking-wide"
                           >
                             {tech}
                           </span>
