@@ -5,14 +5,19 @@ import { Quote } from "lucide-react";
 
 const testimonials = [
   {
-    quote: "Kelly transformed our outdated system into a modern, lightning-fast application. The AI integration alone saved us 20 hours a week.",
+    quote: "Michael transformed our outdated system into a modern, lightning-fast application. The AI integration alone saved us 20 hours a week.",
     author: "Sarah Jenkins",
     role: "Operations Director, TechFlow",
   },
   {
-    quote: "Working with Kelly was a game-changer. The communication was excellent, and the final product exceeded all our expectations.",
+    quote: "Working with Michael was a game-changer. The communication was excellent, and the final product exceeded all our expectations.",
     author: "Michael Chang",
     role: "Founder, StartupX",
+  },
+  {
+    quote: "Working with Michael was great!! He is very knowledgeable about AutoHotKey and was able to deliver exactly what I needed. He is very professional and respectful.",
+    author: "Orlando N.",
+    role: "Upwork Client",
   }
 ];
 
@@ -32,7 +37,7 @@ export function Testimonials() {
           </m.h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <m.div
               key={index}

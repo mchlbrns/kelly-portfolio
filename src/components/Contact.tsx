@@ -101,7 +101,6 @@ export function Contact() {
                 <select
                   id="projectType"
                   name="projectType"
-                  aria-haspopup="listbox"
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all appearance-none"
                 >
                   <option value="Full-Stack Development">Full-Stack Development</option>

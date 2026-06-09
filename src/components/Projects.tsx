@@ -28,6 +28,30 @@ const projects = [
     githubUrl: "https://github.com/mchlbrns",
     imageUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1000",
     imageAlt: "AI Customer Support Diagram",
+  },
+  {
+    title: "Excel Automation & AutoHotkey Scripting",
+    category: "Workflow Automation",
+    problem: "Client was losing 15+ hours weekly to manual spreadsheet updates and redundant data copying between local apps.",
+    solution: "Developed customized AutoHotkey scripts and macros that automated spreadsheet queries, cell calculations, and cross-application data transfers.",
+    result: "Saved 100% of manual effort for the targeted workflows and achieved zero data entry error rates.",
+    tech: ["AutoHotkey", "Microsoft Excel", "Automation", "Windows Scripting"],
+    liveUrl: "",
+    githubUrl: "https://github.com/mchlbrns",
+    imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000",
+    imageAlt: "Excel Spreadsheet Automation Illustration",
+  },
+  {
+    title: "Google Sheets & Telegram Chatbot",
+    category: "Bot Development",
+    problem: "Needed a real-time messaging system that could dynamically query inventory and status details stored in a Google Sheet for remote technicians.",
+    solution: "Built a lightweight Telegram chatbot in Python that authenticated requests, fetched and formatted cell data via the Google Sheets API, and delivered instant response updates.",
+    result: "Technicians retrieved data in under 2 seconds, reducing support desk inquiries by 40%.",
+    tech: ["Python", "Google Sheets API", "Telegram Bot API", "Serverless"],
+    liveUrl: "",
+    githubUrl: "https://github.com/mchlbrns",
+    imageUrl: "https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?auto=format&fit=crop&q=80&w=1000",
+    imageAlt: "Chatbot Automation Illustration",
   }
 ];
 

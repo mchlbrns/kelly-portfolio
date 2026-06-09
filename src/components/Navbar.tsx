@@ -82,6 +82,15 @@ export function Navbar() {
               </button>
             )}
 
+            <a
+              href="https://www.upwork.com/freelancers/~0132fd165333fbdaa4?viewMode=1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-green-600 dark:border-green-500/50 hover:bg-green-50 dark:hover:bg-green-950/20 text-green-600 dark:text-green-400 px-4 py-2 rounded-md text-sm font-medium transition-colors"
+            >
+              Upwork Profile
+            </a>
+
             <Link
               href="#contact"
               className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors"
@@ -131,10 +140,18 @@ export function Navbar() {
                   {link.name}
                 </Link>
               ))}
+              <a
+                href="https://www.upwork.com/freelancers/~0132fd165333fbdaa4?viewMode=1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block px-3 py-2 text-center rounded-md text-base font-medium border border-green-600 dark:border-green-500/50 text-green-600 dark:text-green-400 hover:bg-green-50 dark:hover:bg-green-950/20"
+              >
+                Upwork Profile
+              </a>
               <Link
                 href="#contact"
                 onClick={() => setIsOpen(false)}
-                className="block px-3 py-2 mt-4 text-center rounded-md text-base font-medium bg-blue-600 text-white hover:bg-blue-700"
+                className="block px-3 py-2 mt-2 text-center rounded-md text-base font-medium bg-blue-600 text-white hover:bg-blue-700"
               >
                 Let&apos;s Talk
               </Link>

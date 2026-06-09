@@ -38,10 +38,13 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h1 className="text-5xl md:text-7xl font-black tracking-tight leading-[1.1] mb-8">
+              <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-[1.1] mb-8">
                 Michael Briones. <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500 dark:from-blue-400 dark:to-cyan-400">
-                  Engineering products that solve problems.
+                  Full-Stack AI Developer.
+                </span>
+                <span className="block text-2xl md:text-3xl font-bold text-gray-500 dark:text-gray-400 mt-4 tracking-normal">
+                  Python, Django & Next.js | Build MVPs & Automations that Cut Costs
                 </span>
               </h1>
             </m.div>
@@ -51,8 +54,8 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-2xl mb-12 leading-relaxed">
-                Full-stack developer focused on performance and AI-driven automation. I turn complex requirements into clean, production-ready applications.
+              <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mb-12 leading-relaxed">
+                I build high-performance web applications and custom automation scripts that eliminate manual bottlenecks. From AI-powered MVPs to Django platforms and Selenium/AutoHotkey workflows, I turn complex requirements into clean, production-ready systems that scale.
               </p>
             </m.div>
 
@@ -77,6 +80,15 @@ export function Hero() {
               >
                 Schedule a Call
                 <Calendar size={20} />
+              </a>
+              <a
+                href="https://www.upwork.com/freelancers/~0132fd165333fbdaa4?viewMode=1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-2 border border-green-600 dark:border-green-500/50 text-green-600 dark:text-green-400 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-green-50/50 dark:hover:bg-green-950/20 transition-all active:scale-95 shadow-sm"
+              >
+                Hire Me on Upwork
+                <ArrowRight className="text-green-600 dark:text-green-400 group-hover:translate-x-1 transition-transform rotate-[-45deg]" size={20} />
               </a>
               <a
                 href="/Michael_Briones_CV.pdf"

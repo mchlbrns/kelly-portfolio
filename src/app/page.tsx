@@ -6,6 +6,7 @@ const Services = dynamic(() => import("@/components/Services").then(mod => mod.S
 const Projects = dynamic(() => import("@/components/Projects").then(mod => mod.Projects));
 const Testimonials = dynamic(() => import("@/components/Testimonials").then(mod => mod.Testimonials));
 const Contact = dynamic(() => import("@/components/Contact").then(mod => mod.Contact));
+const ExitIntentPopup = dynamic(() => import("@/components/ExitIntentPopup").then(mod => mod.ExitIntentPopup));
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Projects />
       <Testimonials />
       <Contact />
+      <ExitIntentPopup />
     </>
   );
 }

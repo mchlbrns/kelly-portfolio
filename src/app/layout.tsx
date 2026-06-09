@@ -11,24 +11,24 @@ import { JsonLd } from "@/components/JsonLd";
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
-  title: "Michael — Full-Stack & AI Automation Developer",
-  description: "From full-stack engineering to AI-powered automation — I build solutions that grow businesses.",
+  title: "Michael Briones | Full-Stack AI Developer & Automation Specialist",
+  description: "Experienced Full-Stack Python & AI Developer specializing in Next.js, Django, Selenium, and AutoHotkey workflow automations that cut costs and scale operations.",
   metadataBase: new URL("https://kelly-portfolio-delta.vercel.app"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Michael — Full-Stack & AI Automation Developer",
-    description: "From full-stack engineering to AI-powered automation — I build solutions that grow businesses.",
+    title: "Michael Briones | Full-Stack AI Developer & Automation Specialist",
+    description: "Experienced Full-Stack Python & AI Developer specializing in Next.js, Django, Selenium, and AutoHotkey workflow automations that cut costs and scale operations.",
     url: "https://kelly-portfolio-delta.vercel.app",
-    siteName: "Michael Portfolio",
+    siteName: "Michael Briones Portfolio",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Michael — Full-Stack & AI Automation Developer",
-    description: "From full-stack engineering to AI-powered automation — I build solutions that grow businesses.",
+    title: "Michael Briones | Full-Stack AI Developer & Automation Specialist",
+    description: "Experienced Full-Stack Python & AI Developer specializing in Next.js, Django, Selenium, and AutoHotkey workflow automations that cut costs and scale operations.",
   },
 };
 

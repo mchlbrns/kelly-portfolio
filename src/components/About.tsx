@@ -15,17 +15,17 @@ export function About() {
             className="lg:w-1/2"
           >
             <div className="inline-block px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 text-sm font-bold rounded-md mb-6 uppercase tracking-widest">
-              My Philosophy
+              My Mission
             </div>
             <h2 className="text-4xl md:text-5xl font-black mb-8 leading-tight">
-              I build tools that bridge the gap between code and commerce.
+              I build scalable web apps and workflow automations that cut operating costs.
             </h2>
             <div className="space-y-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
               <p>
-                As a full-stack engineer, I don&apos;t just write functions; I design systems that optimize how businesses operate. My focus is on the intersection of robust backend architecture and high-conversion user interfaces.
+                I help businesses and teams eliminate repetitive, time-consuming manual workflows. By combining modern frontends with powerful Python backends and custom scripting, I design custom systems that optimize how businesses operate.
               </p>
               <p>
-                In an era of generic solutions, I specialize in custom AI integrations that provide measurable ROI—automating the repetitive so you can focus on the creative.
+                Whether you need a full-stack Next.js/Django application, custom AI agents utilizing the OpenAI API, automated scraping pipelines using Selenium, or robust AutoHotkey/Autoit scripting to streamline Excel and desktop operations, I deliver high-quality code focused on ROI.
               </p>
             </div>
           </m.div>
@@ -37,24 +37,42 @@ export function About() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="lg:w-1/2 w-full"
           >
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {[
-                { label: "Core Tech", skills: ["Next.js", "React 19", "TypeScript", "Tailwind 4"] },
-                { label: "AI & Data", skills: ["OpenAI API", "LangChain", "PostgreSQL", "Supabase"] },
-                { label: "Backend", skills: ["Node.js", "Python", "FastAPI", "Docker"] },
-                { label: "Infrastructure", skills: ["Vercel", "AWS", "GitHub Actions", "CI/CD"] }
-              ].map((group, idx) => (
-                <div key={idx} className="p-6 bg-gray-50 dark:bg-gray-900/50 rounded-3xl border border-gray-100 dark:border-gray-800">
-                  <h3 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">{group.label}</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {group.skills.map((skill, i) => (
-                      <span key={i} className="text-sm font-semibold text-gray-800 dark:text-gray-200">
-                        {skill} {i !== group.skills.length - 1 && "•"}
-                      </span>
-                    ))}
-                  </div>
+            <div className="grid grid-cols-1 gap-6">
+              <div className="p-6 bg-gray-50 dark:bg-gray-900/50 rounded-3xl border border-gray-100 dark:border-gray-800">
+                <h3 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Upwork Verified Skills</h3>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    "Python", "Django", "Web Development", "Web Design", "Automation",
+                    "Selenium", "AutoHotkey", "Autoit", "Desktop Application", "C++",
+                    "Game Design", "Game Development", "Data Entry", "Virtual Assistance"
+                  ].map((skill, i) => (
+                    <span
+                      key={i}
+                      className="px-3 py-1.5 bg-green-50 dark:bg-green-950/20 text-green-700 dark:text-green-400 text-sm font-semibold rounded-xl border border-green-100 dark:border-green-900/30"
+                    >
+                      {skill}
+                    </span>
+                  ))}
                 </div>
-              ))}
+              </div>
+
+              <div className="p-6 bg-gray-50 dark:bg-gray-900/50 rounded-3xl border border-gray-100 dark:border-gray-800">
+                <h3 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Modern Stack & AI Integration</h3>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    "Next.js", "React 19", "TypeScript", "Tailwind 4",
+                    "OpenAI API", "LangChain", "PostgreSQL", "Supabase",
+                    "Node.js", "FastAPI", "Docker", "Vercel", "AWS", "CI/CD"
+                  ].map((tech, i) => (
+                    <span
+                      key={i}
+                      className="px-3 py-1.5 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-400 text-sm font-semibold rounded-xl border border-blue-100 dark:border-blue-800"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
           </m.div>
         </div>
