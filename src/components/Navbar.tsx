@@ -98,10 +98,11 @@ export function Navbar() {
   }, [isOpen]);
 
   const navLinks = [
-    { name: "About", href: "#about", id: "about" },
-    { name: "Services", href: "#services", id: "services" },
-    { name: "Work", href: "#work", id: "work" },
-    { name: "Contact", href: "#contact", id: "contact" },
+    { name: "About", href: "/#about", id: "about" },
+    { name: "Services", href: "/#services", id: "services" },
+    { name: "Work", href: "/#work", id: "work" },
+    { name: "Resume", href: "/resume", id: "resume" },
+    { name: "Contact", href: "/#contact", id: "contact" },
   ];
 
   return (
@@ -153,7 +154,7 @@ export function Navbar() {
             </a>
 
             <Link
-              href="#contact"
+              href="/#contact"
               className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors"
             >
               Let&apos;s Talk
@@ -213,7 +214,7 @@ export function Navbar() {
                 Upwork Profile
               </a>
               <Link
-                href="#contact"
+                href="/#contact"
                 onClick={() => setIsOpen(false)}
                 className="block px-3 py-2 mt-2 text-center rounded-md text-base font-medium bg-blue-600 text-white hover:bg-blue-700"
               >

@@ -138,7 +138,7 @@ export function ExitIntentPopup() {
 
             <div className="flex flex-col sm:flex-row gap-3">
               <a
-                href="https://cal.com/michael-briones-6tmq9l"
+                href="https://cal.com/michael-briones"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={handleBooking}

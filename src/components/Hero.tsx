@@ -2,10 +2,11 @@
 
 import { m } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, Calendar, Download } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, Calendar, FileText } from "lucide-react";
 
 export function Hero() {
-  const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL || "#contact";
+  const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL || "https://cal.com/michael-briones";
 
   return (
     <section className="relative min-h-[90vh] flex items-center pt-24 pb-20 overflow-hidden">
@@ -24,10 +25,10 @@ export function Hero() {
               transition={{ duration: 0.5 }}
               className="mb-6"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-400 text-sm font-semibold border border-blue-100 dark:border-blue-800 shadow-sm">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+              <div className="inline-flex items-center gap-2.5 px-4.5 py-2 rounded-full bg-gradient-to-r from-blue-500/10 via-indigo-500/10 to-cyan-500/10 dark:from-blue-500/20 dark:via-indigo-500/15 dark:to-cyan-500/20 text-blue-700 dark:text-cyan-400 text-sm font-extrabold border border-blue-200/50 dark:border-cyan-500/30 shadow-[0_0_15px_rgba(59,130,246,0.1)] dark:shadow-[0_0_20px_rgba(6,182,212,0.15)] hover:scale-105 transition-transform duration-300">
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-500"></span>
                 </span>
                 Available for Q3 Projects
               </div>
@@ -90,35 +91,65 @@ export function Hero() {
                 Hire Me on Upwork
                 <ArrowRight className="text-green-600 dark:text-green-400 group-hover:translate-x-1 transition-transform rotate-[-45deg]" size={20} />
               </a>
-              <a
-                href="/Michael_Briones_CV.pdf"
-                download="Michael_Briones_CV.pdf"
-                className="flex items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium px-4"
+              <Link
+                href="/resume"
+                className="group flex items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium px-4"
               >
-                <Download size={18} />
-                Get Resume
-              </a>
+                <FileText size={18} className="group-hover:rotate-6 transition-transform" />
+                View Resume
+              </Link>
             </m.div>
           </div>
 
           <m.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, scale: 0.95, y: 15 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="flex-1 hidden lg:block relative"
           >
-            <div className="relative z-10 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-white/20">
-              <div className="absolute inset-0 flex items-center justify-center text-8xl font-black text-white/10 dark:text-black/10 select-none">
-                MB
+            <div className="relative z-10 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-950 aspect-square rounded-[3rem] overflow-hidden shadow-[0_20px_50px_rgba(59,130,246,0.15)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.4)] border border-gray-200 dark:border-gray-800 flex items-center justify-center">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-indigo-500/5 mix-blend-overlay" />
+              <div className="relative w-full h-full p-6">
+                <div className="relative w-full h-full rounded-[2rem] overflow-hidden">
+                  <Image
+                    src="/avatar.png"
+                    alt="Michael Briones - Full-Stack Developer & AI Specialist"
+                    fill
+                    className="object-cover hover:scale-105 transition-transform duration-700 ease-out"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    priority
+                  />
+                </div>
               </div>
-              <div className="absolute inset-8 rounded-2xl border border-dashed border-gray-400/30" />
+              <div className="absolute inset-10 rounded-2xl border border-dashed border-blue-500/20 pointer-events-none" />
             </div>
             
             {/* Floating Badges */}
-            <div className="absolute -top-6 -right-6 bg-white dark:bg-gray-900 p-4 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-800 animate-bounce-slow">
-              <div className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">Focus</div>
-              <div className="text-lg font-black text-blue-600">AI Integration</div>
-            </div>
+            <m.div 
+              initial={{ y: 10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              className="absolute -top-6 -right-6 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-800"
+            >
+              <div className="text-xs font-extrabold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-1">Focus</div>
+              <div className="text-lg font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-blue-400 dark:to-cyan-400">AI Automation</div>
+            </m.div>
+
+            <m.div 
+              initial={{ y: -10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.6, duration: 0.6 }}
+              className="absolute -bottom-6 -left-6 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-800"
+            >
+              <div className="text-xs font-extrabold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-1">Status</div>
+              <div className="text-lg font-black text-green-600 dark:text-green-400 flex items-center gap-1.5">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                </span>
+                Available
+              </div>
+            </m.div>
           </m.div>
         </div>
       </div>
