@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Calendar } from "lucide-react";
 
@@ -12,7 +12,7 @@ export function Hero() {
       <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -20,9 +20,9 @@ export function Hero() {
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6">
             Kelly — <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Full-Stack & AI Automation Developer</span>
           </h1>
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
@@ -30,9 +30,9 @@ export function Hero() {
           <p className="mt-4 text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-10 font-medium">
             From full-stack engineering to AI-powered automation — I build solutions that grow businesses.
           </p>
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -54,7 +54,7 @@ export function Hero() {
             Book a Discovery Call
             <Calendar size={20} />
           </a>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );
