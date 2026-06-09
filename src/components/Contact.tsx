@@ -1,9 +1,9 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useState, useEffect } from "react";
 import { m } from "framer-motion";
 import { Send, CheckCircle, Loader2 } from "lucide-react";
-import { submitContactForm } from "@/app/actions/contact";
+import { submitContactForm, contactSchema } from "@/app/actions/contact";
 
 export function ContactSkeleton() {
   return (
@@ -39,6 +39,34 @@ export function Contact() {
   const [state, formAction, isPending] = useActionState(submitContactForm, {
     status: "idle",
   });
+
+  const [errors, setErrors] = useState<Record<string, string[]> | undefined>(undefined);
+
+  useEffect(() => {
+    if (state.errors) {
+      setErrors(state.errors);
+    }
+  }, [state.errors]);
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const rawData = {
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      projectType: formData.get("projectType") as string,
+      message: formData.get("message") as string,
+    };
+
+    const validated = contactSchema.safeParse(rawData);
+    if (!validated.success) {
+      setErrors(validated.error.flatten().fieldErrors);
+      return;
+    }
+
+    setErrors(undefined);
+    formAction(formData);
+  };
 
   return (
     <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-900/50">
@@ -92,7 +120,7 @@ export function Contact() {
               </p>
             </m.div>
           ) : (
-            <form action={formAction} noValidate>
+            <form onSubmit={handleSubmit} noValidate>
               <fieldset disabled={isPending} className="space-y-6">
                 <legend className="sr-only">Contact Form Details</legend>
                 
@@ -107,14 +135,14 @@ export function Contact() {
                       name="name"
                       required
                       aria-required="true"
-                      aria-invalid={!!state.errors?.name}
-                      aria-describedby={state.errors?.name ? "name-error" : undefined}
+                      aria-invalid={!!errors?.name}
+                      aria-describedby={errors?.name ? "name-error" : undefined}
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all disabled:opacity-50"
                       placeholder="John Doe"
                     />
-                    {state.errors?.name && (
+                    {errors?.name && (
                       <p id="name-error" className="mt-2 text-sm text-red-600 dark:text-red-400" role="alert" aria-live="assertive">
-                        {state.errors.name[0]}
+                        {errors.name[0]}
                       </p>
                     )}
                   </div>
@@ -128,14 +156,14 @@ export function Contact() {
                       name="email"
                       required
                       aria-required="true"
-                      aria-invalid={!!state.errors?.email}
-                      aria-describedby={state.errors?.email ? "email-error" : undefined}
+                      aria-invalid={!!errors?.email}
+                      aria-describedby={errors?.email ? "email-error" : undefined}
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all disabled:opacity-50"
                       placeholder="john@example.com"
                     />
-                    {state.errors?.email && (
+                    {errors?.email && (
                       <p id="email-error" className="mt-2 text-sm text-red-600 dark:text-red-400" role="alert" aria-live="assertive">
-                        {state.errors.email[0]}
+                        {errors.email[0]}
                       </p>
                     )}
                   </div>
@@ -174,19 +202,19 @@ export function Contact() {
                     required
                     aria-required="true"
                     rows={4}
-                    aria-invalid={!!state.errors?.message}
-                    aria-describedby={state.errors?.message ? "message-error" : undefined}
+                    aria-invalid={!!errors?.message}
+                    aria-describedby={errors?.message ? "message-error" : undefined}
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none disabled:opacity-50"
                     placeholder="Tell me about your project goals, timeline, and budget..."
                   />
-                  {state.errors?.message && (
+                  {errors?.message && (
                     <p id="message-error" className="mt-2 text-sm text-red-600 dark:text-red-400" role="alert" aria-live="assertive">
-                      {state.errors.message[0]}
+                      {errors.message[0]}
                     </p>
                   )}
                 </div>
 
-                {state.status === "error" && !state.errors && (
+                {state.status === "error" && !errors && (
                   <div className="p-4 bg-red-50 dark:bg-red-950/20 text-red-600 dark:text-red-400 border border-red-100 dark:border-red-900/30 rounded-lg text-sm" role="alert" aria-live="assertive">
                     {state.message || "Something went wrong. Please try again later."}
                   </div>

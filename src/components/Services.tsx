@@ -90,7 +90,7 @@ export function Services() {
               transition={{ duration: 0.5, delay: index * 0.05 }}
               className="group relative p-8 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-[2.5rem] hover:border-blue-500/50 dark:hover:border-blue-400/50 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 flex flex-col"
             >
-              <div className="mb-6 p-4 bg-gray-50 dark:bg-gray-950 w-fit rounded-2xl group-hover:bg-blue-650 group-hover:text-white transition-colors duration-300 border border-gray-150 dark:border-gray-800">
+              <div className="mb-6 p-4 bg-gray-50 dark:bg-gray-950 w-fit rounded-2xl group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 border border-gray-200 dark:border-gray-800">
                 {service.icon}
               </div>
 
@@ -102,12 +102,12 @@ export function Services() {
                   <p className="text-gray-600 dark:text-gray-400 leading-relaxed font-medium">{service.problem}</p>
                 </div>
                 <div>
-                  <span className="text-xs font-black text-green-650 dark:text-green-400 uppercase tracking-widest block mb-1">Solution</span>
+                  <span className="text-xs font-black text-green-600 dark:text-green-400 uppercase tracking-widest block mb-1">Solution</span>
                   <p className="text-gray-600 dark:text-gray-400 leading-relaxed font-medium">{service.solution}</p>
                 </div>
                 <div className="p-4 bg-blue-50/40 dark:bg-blue-950/20 border border-blue-100/50 dark:border-blue-900/30 rounded-2xl mt-4">
-                  <span className="text-xs font-black text-blue-600 dark:text-blue-450 uppercase tracking-widest block mb-1">Outcome</span>
-                  <p className="text-gray-900 dark:text-gray-250 leading-relaxed font-bold">{service.outcome}</p>
+                  <span className="text-xs font-black text-blue-600 dark:text-blue-400 uppercase tracking-widest block mb-1">Outcome</span>
+                  <p className="text-gray-900 dark:text-gray-100 leading-relaxed font-bold">{service.outcome}</p>
                 </div>
               </div>
             </m.div>
