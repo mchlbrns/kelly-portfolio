@@ -59,17 +59,21 @@ const Contact = dynamic(
   )}
 );
 const ExitIntentPopup = dynamic(() => import("@/components/ExitIntentPopup").then(mod => mod.ExitIntentPopup));
+const Stats = dynamic(() => import("@/components/Stats").then(mod => mod.Stats));
+const BackToTop = dynamic(() => import("@/components/BackToTop").then(mod => mod.BackToTop));
 
 export default function Home() {
   return (
     <>
       <Hero />
       <About />
+      <Stats />
       <Services />
       <Projects />
       <Testimonials />
       <Contact />
       <ExitIntentPopup />
+      <BackToTop />
     </>
   );
 }
