@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ArrowRight, Calendar, Download } from "lucide-react";
 
 export function Hero() {
-  const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL || "#";
+  const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL || "#contact";
 
   return (
     <section className="relative min-h-[90vh] flex items-center pt-24 pb-20 overflow-hidden">
@@ -92,7 +92,7 @@ export function Hero() {
               </a>
               <a
                 href="/Michael_Briones_CV.pdf"
-                download
+                download="Michael_Briones_CV.pdf"
                 className="flex items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium px-4"
               >
                 <Download size={18} />
