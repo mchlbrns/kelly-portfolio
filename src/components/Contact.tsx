@@ -1,43 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useActionState } from "react";
 import { m } from "framer-motion";
 import { Send, CheckCircle, Loader2 } from "lucide-react";
+import { submitContactForm } from "@/app/actions/contact";
 
 export function Contact() {
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    projectType: "Full-Stack Development",
-    message: "",
+  const [state, formAction, isPending] = useActionState(submitContactForm, {
+    status: "idle",
   });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("loading");
-
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setStatus("success");
-        setFormData({ name: "", email: "", projectType: "Full-Stack Development", message: "" });
-      } else {
-        setStatus("error");
-      }
-    } catch {
-      setStatus("error");
-    }
-  };
 
   return (
     <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-900/50">
@@ -70,22 +41,16 @@ export function Contact() {
           transition={{ duration: 0.6 }}
           className="bg-white dark:bg-gray-950 p-8 md:p-10 rounded-3xl shadow-lg border border-gray-100 dark:border-gray-800"
         >
-          {status === "success" ? (
-            <div className="text-center py-12">
+          {state.status === "success" ? (
+            <div className="text-center py-12" role="alert">
               <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
               <h3 className="text-2xl font-bold mb-2">Message Sent!</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-6">
-                Thank you for reaching out. I&apos;ll get back to you within 24 hours.
+                {state.message}
               </p>
-              <button
-                onClick={() => setStatus("idle")}
-                className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
-              >
-                Send Another Message
-              </button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form action={formAction} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
@@ -96,11 +61,16 @@ export function Contact() {
                     id="name"
                     name="name"
                     required
-                    value={formData.name}
-                    onChange={handleChange}
+                    aria-invalid={!!state.errors?.name}
+                    aria-describedby={state.errors?.name ? "name-error" : undefined}
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                     placeholder="John Doe"
                   />
+                  {state.errors?.name && (
+                    <p id="name-error" className="mt-2 text-sm text-red-600 dark:text-red-400" role="alert">
+                      {state.errors.name[0]}
+                    </p>
+                  )}
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
@@ -111,11 +81,16 @@ export function Contact() {
                     id="email"
                     name="email"
                     required
-                    value={formData.email}
-                    onChange={handleChange}
+                    aria-invalid={!!state.errors?.email}
+                    aria-describedby={state.errors?.email ? "email-error" : undefined}
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                     placeholder="john@example.com"
                   />
+                  {state.errors?.email && (
+                    <p id="email-error" className="mt-2 text-sm text-red-600 dark:text-red-400" role="alert">
+                      {state.errors.email[0]}
+                    </p>
+                  )}
                 </div>
               </div>
 
@@ -126,8 +101,7 @@ export function Contact() {
                 <select
                   id="projectType"
                   name="projectType"
-                  value={formData.projectType}
-                  onChange={handleChange}
+                  aria-haspopup="listbox"
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all appearance-none"
                 >
                   <option value="Full-Stack Development">Full-Stack Development</option>
@@ -146,25 +120,31 @@ export function Contact() {
                   name="message"
                   required
                   rows={4}
-                  value={formData.message}
-                  onChange={handleChange}
+                  aria-invalid={!!state.errors?.message}
+                  aria-describedby={state.errors?.message ? "message-error" : undefined}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none"
                   placeholder="Tell me about your project goals, timeline, and budget..."
                 />
+                {state.errors?.message && (
+                  <p id="message-error" className="mt-2 text-sm text-red-600 dark:text-red-400" role="alert">
+                    {state.errors.message[0]}
+                  </p>
+                )}
               </div>
 
-              {status === "error" && (
-                <div className="p-3 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded-md text-sm">
-                  Something went wrong. Please try again later or email me directly.
+              {state.status === "error" && !state.errors && (
+                <div className="p-3 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded-md text-sm" role="alert">
+                  {state.message || "Something went wrong. Please try again later."}
                 </div>
               )}
 
               <button
                 type="submit"
-                disabled={status === "loading"}
+                disabled={isPending}
+                aria-disabled={isPending}
                 className="w-full flex items-center justify-center gap-2 py-4 px-6 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold text-lg transition-all disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                {status === "loading" ? (
+                {isPending ? (
                   <>
                     <Loader2 className="animate-spin" size={20} />
                     Sending...

@@ -2,6 +2,7 @@
 
 import { m } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
+import Image from "next/image";
 
 const projects = [
   {
@@ -11,8 +12,10 @@ const projects = [
     solution: "Transformed a simple Vercel deployment into a modern Next.js 14 application with a focus on conversion and performance.",
     result: "Achieved 90+ Lighthouse score, responsive design, and integrated lead generation systems.",
     tech: ["Next.js", "Tailwind CSS", "Framer Motion", "Vercel"],
-    liveUrl: "#",
-    githubUrl: "#",
+    liveUrl: "https://kelly-portfolio-delta.vercel.app",
+    githubUrl: "https://github.com/mchlbrns/kelly-portfolio",
+    imageUrl: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=1000",
+    imageAlt: "Developer Portfolio Workspace",
   },
   {
     title: "AI Customer Support Agent",
@@ -21,8 +24,10 @@ const projects = [
     solution: "Developed a custom LangChain agent utilizing OpenAI API to handle tier-1 support tickets autonomously.",
     result: "Reduced average response time by 85% and successfully resolved 60% of inquiries without human intervention.",
     tech: ["Python", "LangChain", "OpenAI API", "React", "Node.js"],
-    liveUrl: "#",
-    githubUrl: "#",
+    liveUrl: "https://example.com/ai-agent",
+    githubUrl: "https://github.com/mchlbrns",
+    imageUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1000",
+    imageAlt: "AI Customer Support Diagram",
   }
 ];
 
@@ -106,26 +111,39 @@ export function Projects() {
                   </div>
 
                   <div className="flex items-center gap-4 mt-auto">
-                    <a
-                      href={project.liveUrl}
-                      className="flex items-center gap-2 px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-full font-medium hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors"
-                    >
-                      View Live <ExternalLink size={18} />
-                    </a>
-                    <a
-                      href={project.githubUrl}
-                      className="flex items-center gap-2 px-6 py-3 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-full font-medium hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-                    >
-                      Source Code <Github size={18} />
-                    </a>
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-6 py-3 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-full font-medium hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors"
+                      >
+                        View Live <ExternalLink size={18} />
+                      </a>
+                    )}
+                    {project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 px-6 py-3 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-full font-medium hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                      >
+                        Source Code <Github size={18} />
+                      </a>
+                    )}
                   </div>
                 </div>
 
-                <div className="lg:w-1/2 bg-gray-100 dark:bg-gray-950 p-8 flex items-center justify-center min-h-[300px] lg:min-h-full border-t lg:border-t-0 lg:border-l border-gray-200 dark:border-gray-800">
-                  {/* Placeholder for project image */}
-                  <div className="w-full aspect-video bg-gray-200 dark:bg-gray-800 rounded-xl shadow-inner flex items-center justify-center text-gray-400 dark:text-gray-600 font-medium border border-gray-300 dark:border-gray-700">
-                    Project Image / Mockup
-                  </div>
+                <div className="lg:w-1/2 bg-gray-100 dark:bg-gray-950 flex items-center justify-center min-h-[300px] lg:min-h-full border-t lg:border-t-0 lg:border-l border-gray-200 dark:border-gray-800 relative">
+                  <Image
+                    src={project.imageUrl}
+                    alt={project.imageAlt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
               </div>
             </m.div>

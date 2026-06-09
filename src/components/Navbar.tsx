@@ -46,7 +46,7 @@ export function Navbar() {
               <button
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                 className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
-                aria-label="Toggle Theme"
+                aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
               >
                 {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
               </button>
@@ -65,7 +65,7 @@ export function Navbar() {
               <button
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                 className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
-                aria-label="Toggle Theme"
+                aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
               >
                 {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
               </button>
