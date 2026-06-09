@@ -7,7 +7,7 @@ import Link from "next/link";
 import { m, AnimatePresence } from "framer-motion";
 
 export function Navbar() {
-  const { theme, setTheme } = useTheme();
+  const { setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
@@ -52,7 +52,7 @@ export function Navbar() {
         <div className="flex justify-between h-16 items-center">
           <div className="flex-shrink-0">
             <Link href="/" className="text-xl font-bold tracking-tighter">
-              Kelly
+              Michael
             </Link>
           </div>
 
@@ -74,11 +74,11 @@ export function Navbar() {
 
             {mounted && (
               <button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
                 className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
-                aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
+                aria-label={resolvedTheme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
               >
-                {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+                {resolvedTheme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
               </button>
             )}
 
@@ -93,11 +93,11 @@ export function Navbar() {
           <div className="md:hidden flex items-center space-x-4">
             {mounted && (
               <button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
                 className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
-                aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
+                aria-label={resolvedTheme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
               >
-                {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+                {resolvedTheme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
               </button>
             )}
             <button

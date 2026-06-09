@@ -33,7 +33,7 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.1 }}
         >
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6">
-            Kelly — <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Full-Stack & AI Automation Developer</span>
+            Michael Briones — <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Full-Stack & AI Automation Developer</span>
           </h1>
         </m.div>
 
@@ -61,7 +61,7 @@ export function Hero() {
             <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
           </Link>
           <a
-            href="https://cal.com/kelly/discovery"
+            href="https://cal.com/michael-briones/discovery"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center gap-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-200 dark:hover:bg-blue-900/50 transition-all border border-blue-200 dark:border-blue-800"
@@ -70,7 +70,7 @@ export function Hero() {
             <Calendar size={20} />
           </a>
           <a
-            href="/Kelly_CV.pdf"
+            href="/Michael_Briones_CV.pdf"
             download
             className="group flex items-center gap-2 bg-transparent text-gray-700 dark:text-gray-300 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-all border border-gray-300 dark:border-gray-700"
           >

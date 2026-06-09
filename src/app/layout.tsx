@@ -11,23 +11,23 @@ import { JsonLd } from "@/components/JsonLd";
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
-  title: "Kelly — Full-Stack & AI Automation Developer",
+  title: "Michael — Full-Stack & AI Automation Developer",
   description: "From full-stack engineering to AI-powered automation — I build solutions that grow businesses.",
   metadataBase: new URL("https://kelly-portfolio-delta.vercel.app"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Kelly — Full-Stack & AI Automation Developer",
+    title: "Michael — Full-Stack & AI Automation Developer",
     description: "From full-stack engineering to AI-powered automation — I build solutions that grow businesses.",
     url: "https://kelly-portfolio-delta.vercel.app",
-    siteName: "Kelly Portfolio",
+    siteName: "Michael Portfolio",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kelly — Full-Stack & AI Automation Developer",
+    title: "Michael — Full-Stack & AI Automation Developer",
     description: "From full-stack engineering to AI-powered automation — I build solutions that grow businesses.",
   },
 };
