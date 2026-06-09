@@ -43,13 +43,15 @@ export function Testimonials() {
               className="bg-gray-50 dark:bg-gray-900/50 p-8 rounded-3xl relative border border-gray-100 dark:border-gray-800"
             >
               <Quote className="absolute top-8 right-8 text-blue-100 dark:text-blue-900/30 w-12 h-12" />
-              <p className="text-lg text-gray-700 dark:text-gray-300 italic mb-6 relative z-10">
-                &quot;{testimonial.quote}&quot;
-              </p>
-              <div>
-                <h4 className="font-bold text-gray-900 dark:text-white">{testimonial.author}</h4>
-                <p className="text-sm text-gray-500 dark:text-gray-400">{testimonial.role}</p>
-              </div>
+              <blockquote className="relative z-10">
+                <p className="text-lg text-gray-700 dark:text-gray-300 italic mb-6">
+                  &quot;{testimonial.quote}&quot;
+                </p>
+                <cite className="not-italic">
+                  <h4 className="font-bold text-gray-900 dark:text-white">{testimonial.author}</h4>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">{testimonial.role}</p>
+                </cite>
+              </blockquote>
             </m.div>
           ))}
         </div>

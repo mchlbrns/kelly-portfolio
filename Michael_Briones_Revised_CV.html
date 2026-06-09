@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael Briones - CV</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        header {
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #2c3e50;
+        }
+        .contact-info h1 {
+            margin: 0;
+            color: #2c3e50;
+            font-size: 2.2em;
+        }
+        .contact-details {
+            text-align: right;
+            font-size: 0.9em;
+            color: #555;
+        }
+        section {
+            margin-bottom: 25px;
+        }
+        h2 {
+            border-bottom: 1px solid #bdc3c7;
+            color: #2c3e50;
+            text-transform: uppercase;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .job {
+            margin-bottom: 20px;
+        }
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            color: #34495e;
+        }
+        .job-title {
+            font-style: italic;
+            color: #7f8c8d;
+        }
+        ul {
+            margin-top: 5px;
+            padding-left: 20px;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        .project-item {
+            margin-bottom: 15px;
+        }
+        .project-name {
+            font-weight: bold;
+            color: #2980b9;
+        }
+        @media print {
+            body { background: none; padding: 0; }
+            .container { box-shadow: none; padding: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile-section">
+                <img src="original-image.png" alt="Michael Briones" class="profile-img">
+                <div class="contact-info">
+                    <h1>Michael Briones</h1>
+                    <p>Software Developer | Automation Specialist | IT Systems Engineer</p>
+                </div>
+            </div>
+            <div class="contact-details">
+                <p>1575 Bato Bato St. Brgy. Commonwealth, Quezon City</p>
+                <p>9124516388</p>
+                <p>michaelbriones113@gmail.com</p>
+            </div>
+        </header>
+
+        <section id="objective">
+            <h2>Professional Summary</h2>
+            <p>Results-driven Software Developer and Automation Specialist with 5+ years of comprehensive experience in IT development, system automation, and technical infrastructure. Expert in engineering scalable solutions using Python and VB.NET, streamlining business workflows through intelligent automation, and managing complex database environments. Proven ability to lead technical projects from conception to deployment, significantly enhancing operational efficiency and system reliability.</p>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="job">
+                <div class="job-header">
+                    <span>Summit Collection & Allied Services Inc.</span>
+                    <span>March 2022 – Present</span>
+                </div>
+                <div class="job-title">Software Developer & IT Systems Engineer</div>
+                <ul>
+                    <li><strong>Architected and deployed</strong> advanced automation scripts and software solutions using <strong>Python and VB.NET</strong>, reducing manual workloads and increasing processing speed across core business units.</li>
+                    <li><strong>Led the optimization of data architecture</strong>, designing high-performance SQL schemas and stored procedures that handle large-scale datasets with minimal latency.</li>
+                    <li><strong>Strategized and implemented</strong> enterprise-level disaster recovery and database backup protocols, ensuring 100% data integrity and business continuity.</li>
+                    <li><strong>Managed end-to-end SDLC</strong> for internal applications, driving technical requirements and delivering robust, user-centric tools for debt collection and reporting.</li>
+                    <li><strong>Oversaw complex network and system performance</strong>, proactively resolving infrastructure bottlenecks to maintain 99.9% system uptime.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <span>Cybersoft Content Services Inc.</span>
+                    <span>Dec 2018 – April 2021</span>
+                </div>
+                <div class="job-title">IT Technical Support</div>
+                <ul>
+                    <li><strong>Spearheaded first-level technical support</strong>, consistently achieving a <strong>95% customer satisfaction rating</strong> by resolving complex OS and hardware issues.</li>
+                    <li><strong>Launched an internal knowledge base system</strong>, which reduced average ticket resolution time by <strong>20%</strong> and empowered users with self-help resources.</li>
+                    <li><strong>Facilitated technical onboarding</strong> and training for new hires, accelerating their time-to-productivity and ensuring seamless integration into the company's IT environment.</li>
+                    <li><strong>Authored comprehensive technical documentation</strong>, improving the overall reliability and maintainability of internal IT systems.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <span>National Kidney Transplant Institute</span>
+                    <span>July 2018 – Sept 2018</span>
+                </div>
+                <div class="job-title">Intern IT Support</div>
+                <ul>
+                    <li>Assisted hospital staff in resolving technical issues, ensuring minimal disruption to critical healthcare operations.</li>
+                    <li>Deployed and configured specialized medical software, contributing to the seamless integration of technology into patient care workflows.</li>
+                    <li>Provided on-site support for medical imaging systems and assisted in the implementation of security protocols to safeguard patient data.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div>
+                    <strong>Programming:</strong> Python, VB.NET, JavaScript, HTML5, CSS3, Django
+                </div>
+                <div>
+                    <strong>Databases:</strong> SQL Server, MySQL, Database Schema Design
+                </div>
+                <div>
+                    <strong>IT Support:</strong> Hardware/Software Troubleshooting, Network Config, Remote Support
+                </div>
+                <div>
+                    <strong>Tools & Soft Skills:</strong> Git, Documentation, Problem Solving, Team Collaboration
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Key Projects</h2>
+            <div class="project-item">
+                <span class="project-name">Collection Agency System (VB.NET)</span>
+                <p>Led maintenance and development focusing on user-friendly Windows Forms. Implemented features that reduced critical task response time by 25% and enhanced user satisfaction by 20%.</p>
+            </div>
+            <div class="project-item">
+                <span class="project-name">Company Website (Django, Bootstrap)</span>
+                <p>Developed and maintained a robust, scalable web application. Designed responsive user interfaces and integrated interactive features using JavaScript, improving overall site accessibility and engagement.</p>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="job-header">
+                <span>Access Computer College</span>
+                <span>2015 – 2019</span>
+            </div>
+            <div>BS Information Technology (GPA: 3.3)</div>
+            <br>
+            <div class="job-header">
+                <span>Claro M. Recto High School</span>
+                <span>2011 – 2015</span>
+            </div>
+            <div>High School Graduate</div>
+        </section>
+
+        <section id="languages">
+            <h2>Languages</h2>
+            <p>English, Filipino</p>
+        </section>
+    </div>
+</body>
+</html>

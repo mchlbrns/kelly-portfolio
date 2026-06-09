@@ -6,8 +6,9 @@ export function JsonLd() {
     jobTitle: "Full-Stack & AI Automation Developer",
     url: "https://kelly-portfolio-delta.vercel.app",
     sameAs: [
-      "https://github.com/", // Placeholder, will fix `#` links later
-      "https://linkedin.com/in/"
+      "https://github.com/kelly",
+      "https://linkedin.com/in/kelly",
+      "https://twitter.com/kelly"
     ],
   };
 

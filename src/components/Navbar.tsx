@@ -10,15 +10,40 @@ export function Navbar() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     setMounted(true);
+
+    const observerOptions = {
+      root: null,
+      rootMargin: "-20% 0px -70% 0px",
+      threshold: 0,
+    };
+
+    const handleIntersect = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersect, observerOptions);
+    const sections = ["services", "work", "contact", "about"];
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   const navLinks = [
-    { name: "Services", href: "#services" },
-    { name: "Work", href: "#work" },
-    { name: "Contact", href: "#contact" },
+    { name: "About", href: "#about", id: "about" },
+    { name: "Services", href: "#services", id: "services" },
+    { name: "Work", href: "#work", id: "work" },
+    { name: "Contact", href: "#contact", id: "contact" },
   ];
 
   return (
@@ -36,7 +61,12 @@ export function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors text-sm font-medium"
+                aria-current={activeSection === link.id ? "page" : undefined}
+                className={`transition-colors text-sm font-medium ${
+                  activeSection === link.id
+                    ? "text-blue-600 dark:text-blue-400"
+                    : "text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+                }`}
               >
                 {link.name}
               </Link>
