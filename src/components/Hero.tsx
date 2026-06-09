@@ -30,7 +30,7 @@ export function Hero() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-cyan-500"></span>
                 </span>
-                Available for Q3 Projects
+                Open for Select Q3 Projects & AI Automations
               </div>
             </m.div>
 
@@ -129,7 +129,7 @@ export function Hero() {
               initial={{ y: 10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              className="absolute -top-6 -right-6 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-800"
+              className="absolute -top-6 -right-6 z-20 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-800"
             >
               <div className="text-xs font-extrabold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-1">Focus</div>
               <div className="text-lg font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-blue-400 dark:to-cyan-400">AI Automation</div>
@@ -139,7 +139,7 @@ export function Hero() {
               initial={{ y: -10, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.6 }}
-              className="absolute -bottom-6 -left-6 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-800"
+              className="absolute -bottom-6 -left-6 z-20 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md p-4 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-800"
             >
               <div className="text-xs font-extrabold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-1">Status</div>
               <div className="text-lg font-black text-green-600 dark:text-green-400 flex items-center gap-1.5">
