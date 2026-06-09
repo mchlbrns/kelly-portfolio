@@ -26,8 +26,6 @@ export async function POST(req: Request) {
       });
     } else {
       console.log('Form submission received:', { name, email, projectType, message });
-      // Simulate network delay
-      await new Promise((resolve) => setTimeout(resolve, 1000));
     }
 
     return NextResponse.json(
