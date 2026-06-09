@@ -30,6 +30,59 @@ export function ExitIntentPopup() {
     };
   }, [hasTriggered]);
 
+  useEffect(() => {
+    if (!isVisible) return;
+
+    const previousActiveElement = document.activeElement as HTMLElement;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        handleClose();
+        return;
+      }
+
+      if (e.key === "Tab") {
+        const modal = document.getElementById("exit-intent-modal");
+        if (!modal) return;
+
+        const focusables = modal.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), textarea, input, select'
+        );
+        if (focusables.length === 0) return;
+
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+
+        if (e.shiftKey) {
+          if (document.activeElement === first) {
+            last.focus();
+            e.preventDefault();
+          }
+        } else {
+          if (document.activeElement === last) {
+            first.focus();
+            e.preventDefault();
+          }
+        }
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    // Focus first interactive control (close button)
+    const timer = setTimeout(() => {
+      const modal = document.getElementById("exit-intent-modal");
+      const first = modal?.querySelector<HTMLElement>('a[href], button');
+      first?.focus();
+    }, 50);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      clearTimeout(timer);
+      previousActiveElement?.focus();
+    };
+  }, [isVisible]);
+
   const handleClose = () => {
     setIsVisible(false);
     localStorage.setItem("exit_popup_dismissed", "true");
@@ -48,6 +101,11 @@ export function ExitIntentPopup() {
           <div className="absolute inset-0" onClick={handleClose} />
 
           <m.div
+            id="exit-intent-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="exit-popup-title"
+            aria-describedby="exit-popup-desc"
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -70,10 +128,10 @@ export function ExitIntentPopup() {
               <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-green-50 dark:bg-green-950/20 text-green-700 dark:text-green-400 text-xs font-bold rounded-full border border-green-100 dark:border-green-900/30 mb-4">
                 Free Automation Audit
               </span>
-              <h3 className="text-3xl font-black text-gray-900 dark:text-white leading-tight">
+              <h3 id="exit-popup-title" className="text-3xl font-black text-gray-900 dark:text-white leading-tight">
                 Losing hours to manual tasks?
               </h3>
-              <p className="text-gray-600 dark:text-gray-400 mt-3 text-base leading-relaxed">
+              <p id="exit-popup-desc" className="text-gray-600 dark:text-gray-400 mt-3 text-base leading-relaxed">
                 Let&apos;s audit your workflows. Schedule a free 15-minute consultation to identify exactly what can be automated using custom scripts, web apps, or AI integrations.
               </p>
             </div>
