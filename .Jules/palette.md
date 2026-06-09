@@ -1,0 +1,3 @@
+## 2025-02-24 - Enhance Navbar Keyboard Focus States
+**Learning:** Found that icon-only buttons often rely on hover states (`hover:bg-gray-100`) but miss visual keyboard focus states (`focus-visible:ring`). Additionally, conditionally rendered mobile buttons easily miss `aria-label`s compared to their desktop counterparts.
+**Action:** Always add `focus-visible:ring-2` to interactive elements and double-check responsive button variants for parity in ARIA attributes.
