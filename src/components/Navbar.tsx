@@ -39,6 +39,64 @@ export function Navbar() {
     return () => observer.disconnect();
   }, []);
 
+  // Keyboard navigation & focus trapping for accessibility
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsOpen(false);
+        return;
+      }
+
+      if (e.key === "Tab") {
+        const drawer = document.getElementById("mobile-menu-drawer");
+        if (!drawer) return;
+
+        const focusables = drawer.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), textarea, input, select'
+        );
+        if (focusables.length === 0) return;
+
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+
+        if (e.shiftKey) {
+          if (document.activeElement === first) {
+            last.focus();
+            e.preventDefault();
+          }
+        } else {
+          if (document.activeElement === last) {
+            first.focus();
+            e.preventDefault();
+          }
+        }
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (isOpen) {
+      const activeEl = document.activeElement as HTMLElement;
+      
+      // Delay slightly to allow element to render and focus
+      const timer = setTimeout(() => {
+        const drawer = document.getElementById("mobile-menu-drawer");
+        const first = drawer?.querySelector<HTMLElement>('a[href], button');
+        first?.focus();
+      }, 50);
+
+      return () => {
+        clearTimeout(timer);
+        activeEl?.focus();
+      };
+    }
+  }, [isOpen]);
+
   const navLinks = [
     { name: "About", href: "#about", id: "about" },
     { name: "Services", href: "#services", id: "services" },
@@ -79,6 +137,9 @@ export function Navbar() {
                 aria-label={resolvedTheme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
               >
                 {resolvedTheme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+                <span className="sr-only">
+                  {resolvedTheme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
+                </span>
               </button>
             )}
 
@@ -107,6 +168,9 @@ export function Navbar() {
                 aria-label={resolvedTheme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
               >
                 {resolvedTheme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+                <span className="sr-only">
+                  {resolvedTheme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
+                </span>
               </button>
             )}
             <button
@@ -129,7 +193,7 @@ export function Navbar() {
             exit={{ opacity: 0, y: -10 }}
             className="md:hidden"
           >
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-gray-950 border-b border-gray-200 dark:border-gray-800">
+            <div id="mobile-menu-drawer" className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-gray-950 border-b border-gray-200 dark:border-gray-800">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
