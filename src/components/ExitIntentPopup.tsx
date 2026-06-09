@@ -8,6 +8,16 @@ export function ExitIntentPopup() {
   const [isVisible, setIsVisible] = useState(false);
   const [hasTriggered, setHasTriggered] = useState(false);
 
+  const handleClose = () => {
+    setIsVisible(false);
+    localStorage.setItem("exit_popup_dismissed", "true");
+  };
+
+  const handleBooking = () => {
+    setIsVisible(false);
+    localStorage.setItem("exit_popup_dismissed", "true");
+  };
+
   useEffect(() => {
     // Check if user has already dismissed the popup in this browser session
     const dismissed = localStorage.getItem("exit_popup_dismissed");
@@ -82,16 +92,6 @@ export function ExitIntentPopup() {
       previousActiveElement?.focus();
     };
   }, [isVisible]);
-
-  const handleClose = () => {
-    setIsVisible(false);
-    localStorage.setItem("exit_popup_dismissed", "true");
-  };
-
-  const handleBooking = () => {
-    setIsVisible(false);
-    localStorage.setItem("exit_popup_dismissed", "true");
-  };
 
   return (
     <AnimatePresence>
