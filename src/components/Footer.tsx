@@ -6,17 +6,14 @@ export function Footer() {
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="md:flex md:items-center md:justify-between">
           <div className="flex justify-center space-x-6 md:order-2">
-            <a href="#" className="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300">
-              <span className="sr-only">GitHub</span>
-              <Github size={24} />
+            <a href="https://github.com" aria-label="Visit my GitHub profile" className="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-md">
+              <Github size={24} aria-hidden="true" />
             </a>
-            <a href="#" className="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300">
-              <span className="sr-only">LinkedIn</span>
-              <Linkedin size={24} />
+            <a href="https://linkedin.com" aria-label="Visit my LinkedIn profile" className="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-md">
+              <Linkedin size={24} aria-hidden="true" />
             </a>
-            <a href="#" className="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300">
-              <span className="sr-only">Twitter</span>
-              <Twitter size={24} />
+            <a href="https://twitter.com" aria-label="Visit my Twitter profile" className="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-md">
+              <Twitter size={24} aria-hidden="true" />
             </a>
           </div>
           <div className="mt-8 md:mt-0 md:order-1">
