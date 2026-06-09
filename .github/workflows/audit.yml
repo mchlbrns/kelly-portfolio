@@ -40,6 +40,7 @@ jobs:
         with:
           urls: |
             http://localhost:3000/
+          startCommand: pnpm run start
           budgetPath: ./lighthouse-budget.json
           uploadArtifacts: true
           temporaryPublicStorage: true
