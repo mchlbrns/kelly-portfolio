@@ -5,6 +5,36 @@ import { m } from "framer-motion";
 import { Send, CheckCircle, Loader2 } from "lucide-react";
 import { submitContactForm } from "@/app/actions/contact";
 
+export function ContactSkeleton() {
+  return (
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 animate-pulse">
+      <div className="h-8 w-64 bg-gray-200 dark:bg-gray-800 rounded mx-auto mb-4"></div>
+      <div className="h-4 w-96 bg-gray-100 dark:bg-gray-900 rounded mx-auto mb-12"></div>
+      <div className="bg-white dark:bg-gray-950 p-8 md:p-10 rounded-3xl border border-gray-100 dark:border-gray-800">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div>
+            <div className="h-4 w-12 bg-gray-200 dark:bg-gray-800 rounded mb-2"></div>
+            <div className="h-12 w-full bg-gray-100 dark:bg-gray-900 rounded-lg"></div>
+          </div>
+          <div>
+            <div className="h-4 w-12 bg-gray-200 dark:bg-gray-800 rounded mb-2"></div>
+            <div className="h-12 w-full bg-gray-100 dark:bg-gray-900 rounded-lg"></div>
+          </div>
+        </div>
+        <div className="mb-6">
+          <div className="h-4 w-24 bg-gray-200 dark:bg-gray-800 rounded mb-2"></div>
+          <div className="h-12 w-full bg-gray-100 dark:bg-gray-900 rounded-lg"></div>
+        </div>
+        <div className="mb-6">
+          <div className="h-4 w-28 bg-gray-200 dark:bg-gray-800 rounded mb-2"></div>
+          <div className="h-32 w-full bg-gray-100 dark:bg-gray-900 rounded-lg"></div>
+        </div>
+        <div className="h-14 w-full bg-gray-200 dark:bg-gray-800 rounded-lg"></div>
+      </div>
+    </div>
+  );
+}
+
 export function Contact() {
   const [state, formAction, isPending] = useActionState(submitContactForm, {
     status: "idle",
@@ -39,122 +69,148 @@ export function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-white dark:bg-gray-950 p-8 md:p-10 rounded-3xl shadow-lg border border-gray-100 dark:border-gray-800"
+          className="bg-white dark:bg-gray-950 p-8 md:p-10 rounded-3xl shadow-lg border border-gray-100 dark:border-gray-800 relative overflow-hidden"
         >
+          {/* Global Form Submission Live Announcement */}
+          <div className="sr-only" aria-live="polite">
+            {isPending && "Submitting form, please wait..."}
+            {state.status === "success" && "Form submitted successfully. " + state.message}
+            {state.status === "error" && "Form submission failed. " + (state.message || "Please fix errors.")}
+          </div>
+
           {state.status === "success" ? (
-            <div className="text-center py-12" role="alert">
-              <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold mb-2">Message Sent!</h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-6">
+            <m.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="text-center py-12" 
+              role="alert"
+            >
+              <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4 animate-bounce-slow" />
+              <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white">Message Sent!</h3>
+              <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-md mx-auto">
                 {state.message}
               </p>
-            </div>
+            </m.div>
           ) : (
-            <form action={formAction} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    aria-invalid={!!state.errors?.name}
-                    aria-describedby={state.errors?.name ? "name-error" : undefined}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-                    placeholder="John Doe"
-                  />
-                  {state.errors?.name && (
-                    <p id="name-error" className="mt-2 text-sm text-red-600 dark:text-red-400" role="alert">
-                      {state.errors.name[0]}
-                    </p>
-                  )}
+            <form action={formAction} noValidate>
+              <fieldset disabled={isPending} className="space-y-6">
+                <legend className="sr-only">Contact Form Details</legend>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                      Name <span className="text-red-500" aria-hidden="true">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      aria-required="true"
+                      aria-invalid={!!state.errors?.name}
+                      aria-describedby={state.errors?.name ? "name-error" : undefined}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all disabled:opacity-50"
+                      placeholder="John Doe"
+                    />
+                    {state.errors?.name && (
+                      <p id="name-error" className="mt-2 text-sm text-red-600 dark:text-red-400" role="alert" aria-live="assertive">
+                        {state.errors.name[0]}
+                      </p>
+                    )}
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                      Email <span className="text-red-500" aria-hidden="true">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      aria-required="true"
+                      aria-invalid={!!state.errors?.email}
+                      aria-describedby={state.errors?.email ? "email-error" : undefined}
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all disabled:opacity-50"
+                      placeholder="john@example.com"
+                    />
+                    {state.errors?.email && (
+                      <p id="email-error" className="mt-2 text-sm text-red-600 dark:text-red-400" role="alert" aria-live="assertive">
+                        {state.errors.email[0]}
+                      </p>
+                    )}
+                  </div>
                 </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    aria-invalid={!!state.errors?.email}
-                    aria-describedby={state.errors?.email ? "email-error" : undefined}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-                    placeholder="john@example.com"
-                  />
-                  {state.errors?.email && (
-                    <p id="email-error" className="mt-2 text-sm text-red-600 dark:text-red-400" role="alert">
-                      {state.errors.email[0]}
-                    </p>
-                  )}
-                </div>
-              </div>
 
-              <div>
-                <label htmlFor="projectType" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Project Type
-                </label>
-                <select
-                  id="projectType"
-                  name="projectType"
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all appearance-none"
+                <div>
+                  <label htmlFor="projectType" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                    Project Type
+                  </label>
+                  <div className="relative">
+                    <select
+                      id="projectType"
+                      name="projectType"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all disabled:opacity-50 appearance-none"
+                    >
+                      <option value="Full-Stack Development">Full-Stack Development</option>
+                      <option value="AI Automation">AI Automation</option>
+                      <option value="MVP / Prototyping">MVP / Prototyping</option>
+                      <option value="Other">Other</option>
+                    </select>
+                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-500 dark:text-gray-400">
+                      <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                    Project Details <span className="text-red-500" aria-hidden="true">*</span>
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    required
+                    aria-required="true"
+                    rows={4}
+                    aria-invalid={!!state.errors?.message}
+                    aria-describedby={state.errors?.message ? "message-error" : undefined}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none disabled:opacity-50"
+                    placeholder="Tell me about your project goals, timeline, and budget..."
+                  />
+                  {state.errors?.message && (
+                    <p id="message-error" className="mt-2 text-sm text-red-600 dark:text-red-400" role="alert" aria-live="assertive">
+                      {state.errors.message[0]}
+                    </p>
+                  )}
+                </div>
+
+                {state.status === "error" && !state.errors && (
+                  <div className="p-4 bg-red-50 dark:bg-red-950/20 text-red-600 dark:text-red-400 border border-red-100 dark:border-red-900/30 rounded-lg text-sm" role="alert" aria-live="assertive">
+                    {state.message || "Something went wrong. Please try again later."}
+                  </div>
+                )}
+
+                <button
+                  type="submit"
+                  disabled={isPending}
+                  aria-disabled={isPending}
+                  className="w-full flex items-center justify-center gap-2 py-4 px-6 bg-blue-600 hover:bg-blue-700 focus-visible:ring-2 focus-visible:ring-blue-500 outline-none text-white rounded-lg font-semibold text-lg transition-all disabled:opacity-75 disabled:cursor-not-allowed"
                 >
-                  <option value="Full-Stack Development">Full-Stack Development</option>
-                  <option value="AI Automation">AI Automation</option>
-                  <option value="MVP / Prototyping">MVP / Prototyping</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                  Project Details
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  rows={4}
-                  aria-invalid={!!state.errors?.message}
-                  aria-describedby={state.errors?.message ? "message-error" : undefined}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none"
-                  placeholder="Tell me about your project goals, timeline, and budget..."
-                />
-                {state.errors?.message && (
-                  <p id="message-error" className="mt-2 text-sm text-red-600 dark:text-red-400" role="alert">
-                    {state.errors.message[0]}
-                  </p>
-                )}
-              </div>
-
-              {state.status === "error" && !state.errors && (
-                <div className="p-3 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded-md text-sm" role="alert">
-                  {state.message || "Something went wrong. Please try again later."}
-                </div>
-              )}
-
-              <button
-                type="submit"
-                disabled={isPending}
-                aria-disabled={isPending}
-                className="w-full flex items-center justify-center gap-2 py-4 px-6 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold text-lg transition-all disabled:opacity-70 disabled:cursor-not-allowed"
-              >
-                {isPending ? (
-                  <>
-                    <Loader2 className="animate-spin" size={20} />
-                    Sending...
-                  </>
-                ) : (
-                  <>
-                    Send Message
-                    <Send size={20} />
-                  </>
-                )}
-              </button>
+                  {isPending ? (
+                    <>
+                      <Loader2 className="animate-spin" size={20} aria-hidden="true" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      Send Message
+                      <Send size={20} aria-hidden="true" />
+                    </>
+                  )}
+                </button>
+              </fieldset>
             </form>
           )}
         </m.div>
