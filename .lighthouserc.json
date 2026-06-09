@@ -1,9 +1,8 @@
 {
   "ci": {
     "collect": {
-      "startServerCommand": "pnpm run start",
       "url": [
-        "http://localhost:3000/"
+        "https://kelly-portfolio-delta.vercel.app/"
       ]
     },
     "upload": {

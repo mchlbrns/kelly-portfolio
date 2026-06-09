@@ -7,6 +7,8 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { SkipLink } from "@/components/SkipLink";
 import { JsonLd } from "@/components/JsonLd";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
@@ -16,6 +18,19 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://kelly-portfolio-delta.vercel.app"),
   alternates: {
     canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   icons: {
     icon: "/favicon.ico",
@@ -69,6 +84,8 @@ export default function RootLayout({
           </AnimationProvider>
         </ThemeProvider>
         <JsonLd />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
