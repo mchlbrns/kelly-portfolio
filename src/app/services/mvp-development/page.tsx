@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "MVP & SaaS Software Prototyping Services | Michael Briones",
   description: "Hire an MVP developer to build full-stack SaaS prototypes, integrate Stripe billing, set up Supabase databases, and launch fast responsive web apps.",
+  keywords: ["MVP Development", "SaaS Prototyping", "Next.js Startup Builder", "Stripe Integration", "Supabase Database Setup", "Full-Stack SaaS MVP", "Software Prototyping Services", "Rapid Application Development"],
   alternates: {
     canonical: "/services/mvp-development",
   },

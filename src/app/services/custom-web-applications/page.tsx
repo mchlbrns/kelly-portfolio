@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Custom Web Applications & Next.js Development | Michael Briones",
   description: "Hire a full-stack developer to build custom Next.js, React, and Django web applications optimized for speed, access compliance, and lead conversion.",
+  keywords: ["Custom Web Applications", "Next.js 15 Development", "Full-Stack Web Development", "React Business Portals", "Django Backend Development", "API Integration Services", "Scalable Web Architecture", "Enterprise Web Solutions"],
   alternates: {
     canonical: "/services/custom-web-applications",
   },

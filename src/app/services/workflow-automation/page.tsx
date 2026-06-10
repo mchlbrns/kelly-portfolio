@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Workflow Automation & Scripting Services | Michael Briones",
   description: "Hire a workflow automation specialist to build AutoHotkey macros, Selenium browser scripts, Google Sheets integrations, and Python scraping engines.",
+  keywords: ["Workflow Automation", "AutoHotkey Scripting", "Selenium Browser Automation", "Python Web Scraping", "Business Process Automation", "Google Sheets Integration", "Telegram Bot Development", "Data Pipeline Automation"],
   alternates: {
     canonical: "/services/workflow-automation",
   },

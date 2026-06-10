@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "AI Integration & LLM Automation Services | Michael Briones",
   description: "Hire an AI automation developer to integrate OpenAI API, LangChain agents, pinecone vector RAG databases, and custom GPT models into your operations.",
+  keywords: ["AI Automation", "LLM Integration", "OpenAI API Development", "LangChain Agents", "Retrieval-Augmented Generation", "Pinecone Vector Database", "AI Chatbot for Business", "Semantic Search Implementation"],
   alternates: {
     canonical: "/services/ai-automation",
   },

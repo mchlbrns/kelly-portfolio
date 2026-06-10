@@ -23,6 +23,7 @@ export async function generateMetadata({ params }: RouteProps): Promise<Metadata
   return {
     title: `${project.title} | Michael Briones Case Study`,
     description: project.problem,
+    keywords: [project.title, project.category, ...project.tech, "Case Study", "Michael Briones Portfolio", "Software Development", "Business Automation"],
     alternates: {
       canonical: `/projects/${slug}`,
     },
