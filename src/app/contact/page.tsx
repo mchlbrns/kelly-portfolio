@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Contact Michael Briones | Hire AI & Full-Stack Developer",
   description: "Request a consultation call or drop a message to build custom web applications, SaaS MVPs, automated pipelines, or integrate ChatGPT/OpenAI models.",
+  keywords: ["Contact Michael Briones", "Hire Full-Stack Developer", "AI Automation Consultant", "Next.js Freelancer", "Web Development Quote"],
   alternates: {
     canonical: "/contact",
   },

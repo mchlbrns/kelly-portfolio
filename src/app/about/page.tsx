@@ -8,6 +8,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About Michael Briones | AI Automation & Full-Stack Developer",
   description: "Meet Michael Briones, a full-stack developer and AI automation engineer building custom web portals, RAG databases, and desktop scripting workflows.",
+  keywords: ["About Michael Briones", "AI Specialist", "Full-Stack Engineer Philippines", "Automation Expert", "Freelance Developer"],
   alternates: {
     canonical: "/about",
   },

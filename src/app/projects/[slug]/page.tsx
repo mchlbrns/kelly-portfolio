@@ -58,8 +58,37 @@ export default async function ProjectPage({ params }: RouteProps) {
     notFound();
   }
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://michaelbriones-dev.vercel.app"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Projects",
+        "item": "https://michaelbriones-dev.vercel.app/#work"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": project.title,
+        "item": `https://michaelbriones-dev.vercel.app/projects/${project.slug}`
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-950/20 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Breadcrumbs Navigation */}

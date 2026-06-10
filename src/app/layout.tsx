@@ -15,6 +15,7 @@ const inter = Inter({ subsets: ["latin"], display: "swap" });
 export const metadata: Metadata = {
   title: "Michael Briones | AI Automation & Full-Stack Developer",
   description: "AI automation & full-stack developer Michael Briones builds custom web apps, vector database integrations, and automated pipelines to cut operational costs.",
+  keywords: ["AI Automation", "Full-Stack Developer", "Next.js", "Python", "Workflow Automation", "MVP Development", "Quezon City", "Philippines", "Freelance Developer"],
   metadataBase: new URL("https://michaelbriones-dev.vercel.app"),
   alternates: {
     canonical: "/",
@@ -34,7 +35,12 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/favicon.ico",
+    apple: "/avatar.png",
   },
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#030712" },
+  ],
   openGraph: {
     title: "Michael Briones | AI Automation & Full-Stack Developer",
     description: "AI automation & full-stack developer Michael Briones builds custom web apps, vector database integrations, and automated pipelines to cut operational costs.",

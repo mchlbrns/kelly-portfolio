@@ -7,7 +7,8 @@ export function JsonLd() {
     name: "Michael Briones",
     jobTitle: "Freelance Full-Stack & AI Automation Developer",
     url: "https://michaelbriones-dev.vercel.app",
-    description: "Freelance full-stack & AI automation developer. I build custom Next.js web apps and workflow automations to help businesses cut costs and scale.",
+    image: "https://michaelbriones-dev.vercel.app/avatar.png",
+    description: "Freelance full-stack & AI automation developer Michael Briones builds custom Next.js web apps and workflow automations to help businesses cut costs and scale.",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Quezon City",
@@ -28,7 +29,10 @@ export function JsonLd() {
       "AutoHotkey",
       "Selenium Scripting",
       "React",
-      "TypeScript"
+      "TypeScript",
+      "Node.js",
+      "SaaS Development",
+      "MVP Development"
     ]
   };
 
@@ -61,14 +65,78 @@ export function JsonLd() {
     name: "Michael Briones Development Services",
     url: "https://michaelbriones-dev.vercel.app",
     image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=1200&h=630",
-    description: "Freelance full-stack & AI automation developer. I build custom Next.js web apps and workflow automations to help businesses cut costs and scale.",
+    description: "Specialized development services including AI automation, custom web applications, and workflow optimization to reduce operational overhead.",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Quezon City",
       addressCountry: "Philippines"
     },
     priceRange: "$$",
-    areaServed: "Worldwide"
+    areaServed: "Worldwide",
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Development Services",
+      itemListElement: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "AI Automation"
+          }
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Custom Web Applications"
+          }
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Workflow Automation"
+          }
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "MVP Development"
+          }
+        }
+      ]
+    }
+  };
+
+  const faqSchema = {
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why hire a specialist over a generic developer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A specialist like Michael Briones focuses on solving business challenges, eliminating repetitive work, and building high-performance systems with clear outcomes and ROI, rather than just writing code."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What technologies do you use for AI automation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "I leverage Next.js, OpenAI API, LangChain, Python, and custom desktop scripting with Selenium and AutoHotkey to build robust AI-powered workflows."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you provide long-term support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, I provide dedicated post-launch maintenance, troubleshooting support, and system monitoring to ensure smooth operations as your business scales."
+        }
+      }
+    ]
   };
 
   const jsonLdGraph = {
@@ -77,6 +145,7 @@ export function JsonLd() {
       personSchema,
       websiteSchema,
       serviceSchema,
+      faqSchema,
       ...creativeWorks
     ]
   };
