@@ -73,9 +73,14 @@ export function JsonLd() {
       addressRegion: "Metro Manila",
       addressCountry: "Philippines"
     },
-    telephone: "+639000000000", // Required for ProfessionalService
+    telephone: "+639000000000",
     priceRange: "$$ - Competitive Pricing for Custom Automation & Web Apps",
     areaServed: "Worldwide",
+    aggregateRating: {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": "3"
+    },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Development Services",
