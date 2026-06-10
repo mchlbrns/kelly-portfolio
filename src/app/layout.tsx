@@ -14,7 +14,7 @@ const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
   title: "Michael Briones | AI Automation & Full-Stack Developer",
-  description: "AI automation & full-stack developer Michael Briones builds custom web apps, vector database integrations, and automated pipelines to cut operational costs.",
+  description: "Hire an AI Automation & Full-Stack Developer in Manila, Philippines. I build custom MVPs and automated tools to help founders scale. Book a free consult now!",
   keywords: ["AI Automation", "Full-Stack Developer", "Next.js", "Python", "Workflow Automation", "MVP Development", "Quezon City", "Philippines", "Freelance Developer"],
   metadataBase: new URL("https://michaelbriones-dev.vercel.app"),
   alternates: {
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Michael Briones | AI Automation & Full-Stack Developer",
-    description: "AI automation & full-stack developer Michael Briones builds custom web apps, vector database integrations, and automated pipelines to cut operational costs.",
+    description: "Hire an AI Automation & Full-Stack Developer in Manila, Philippines. I build custom MVPs and automated tools to help founders scale. Book a free consult now!",
     url: "https://michaelbriones-dev.vercel.app",
     siteName: "Michael Briones Portfolio",
     locale: "en_US",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Michael Briones | AI Automation & Full-Stack Developer",
-    description: "AI automation & full-stack developer Michael Briones builds custom web apps, vector database integrations, and automated pipelines to cut operational costs.",
+    description: "Hire an AI Automation & Full-Stack Developer in Manila, Philippines. I build custom MVPs and automated tools to help founders scale. Book a free consult now!",
     images: ["https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=1200&h=630"],
   },
 };

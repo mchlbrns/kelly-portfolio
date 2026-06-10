@@ -139,6 +139,30 @@ export function JsonLd() {
     ]
   };
 
+  const reviews = [
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Sarah Jenkins" },
+      "reviewBody": "Michael transformed our outdated system into a modern, lightning-fast application. The AI integration alone saved us 20 hours a week.",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "datePublished": "2024-05-15"
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Michael Chang" },
+      "reviewBody": "Working with Michael was a game-changer. The communication was excellent, and the final product exceeded all our expectations.",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "datePublished": "2024-03-10"
+    },
+    {
+      "@type": "Review",
+      "author": { "@type": "Person", "name": "Orlando N." },
+      "reviewBody": "Working with Michael was great!! He is very knowledgeable about AutoHotKey and was able to deliver exactly what I needed. He is very professional and respectful.",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "datePublished": "2024-01-22"
+    }
+  ];
+
   const jsonLdGraph = {
     "@context": "https://schema.org",
     "@graph": [
@@ -146,6 +170,7 @@ export function JsonLd() {
       websiteSchema,
       serviceSchema,
       faqSchema,
+      ...reviews,
       ...creativeWorks
     ]
   };
