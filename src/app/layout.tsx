@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
@@ -12,6 +12,15 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#030712" },
+  ],
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   title: "Michael Briones | AI Automation & Full-Stack Developer",
@@ -38,10 +47,6 @@ export const metadata: Metadata = {
     icon: "/favicon.ico",
     apple: "/avatar.png",
   },
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#030712" },
-  ],
   openGraph: {
     title: "Michael Briones | AI Automation & Full-Stack Developer",
     description: "Hire an AI Automation & Full-Stack Developer in Manila, Philippines. I build custom MVPs and automated tools to help founders scale. Book a free consult now!",

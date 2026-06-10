@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { blogPosts } from "@/data/blog";
-import { ArrowRight, Calendar, User, Tag } from "lucide-react";
+import { ArrowRight, Calendar, User } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
