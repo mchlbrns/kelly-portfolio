@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "MVP & SaaS Software Prototyping Services | Michael Briones",
     description: "Hire an MVP developer to build full-stack SaaS prototypes, integrate Stripe billing, set up Supabase databases, and launch fast responsive web apps.",
-    url: "https://kelly-portfolio-delta.vercel.app/services/mvp-development",
+    url: "https://michaelbriones-dev.vercel.app/services/mvp-development",
     siteName: "Michael Briones Portfolio",
     locale: "en_US",
     type: "website",
@@ -47,19 +47,19 @@ export default function MVPDevelopmentPage() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://kelly-portfolio-delta.vercel.app"
+        "item": "https://michaelbriones-dev.vercel.app"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Services",
-        "item": "https://kelly-portfolio-delta.vercel.app/services"
+        "item": "https://michaelbriones-dev.vercel.app/services"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "MVP & SaaS Development",
-        "item": "https://kelly-portfolio-delta.vercel.app/services/mvp-development"
+        "item": "https://michaelbriones-dev.vercel.app/services/mvp-development"
       }
     ]
   };

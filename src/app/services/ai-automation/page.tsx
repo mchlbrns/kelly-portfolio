@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "AI Integration & LLM Automation Services | Michael Briones",
     description: "Hire an AI automation developer to integrate OpenAI API, LangChain agents, pinecone vector RAG databases, and custom GPT models into your operations.",
-    url: "https://kelly-portfolio-delta.vercel.app/services/ai-automation",
+    url: "https://michaelbriones-dev.vercel.app/services/ai-automation",
     siteName: "Michael Briones Portfolio",
     locale: "en_US",
     type: "website",
@@ -47,19 +47,19 @@ export default function AIAutomationPage() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://kelly-portfolio-delta.vercel.app"
+        "item": "https://michaelbriones-dev.vercel.app"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Services",
-        "item": "https://kelly-portfolio-delta.vercel.app/services"
+        "item": "https://michaelbriones-dev.vercel.app/services"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "AI Automation",
-        "item": "https://kelly-portfolio-delta.vercel.app/services/ai-automation"
+        "item": "https://michaelbriones-dev.vercel.app/services/ai-automation"
       }
     ]
   };

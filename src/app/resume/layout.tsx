@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Michael Briones Resume | Full-Stack & AI Automation Developer",
     description: "Explore the professional experience, technical skills, and key projects of Michael Briones, a freelance Full-Stack Developer and AI Automation Developer.",
-    url: "https://kelly-portfolio-delta.vercel.app/resume",
+    url: "https://michaelbriones-dev.vercel.app/resume",
     type: "profile",
     images: [
       {

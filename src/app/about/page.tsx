@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "About Michael Briones | AI Automation & Full-Stack Developer",
     description: "Meet Michael Briones, a full-stack developer and AI automation engineer building custom web portals, RAG databases, and desktop scripting workflows.",
-    url: "https://kelly-portfolio-delta.vercel.app/about",
+    url: "https://michaelbriones-dev.vercel.app/about",
     siteName: "Michael Briones Portfolio",
     locale: "en_US",
     type: "profile",
@@ -35,13 +35,13 @@ export default function AboutPage() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://kelly-portfolio-delta.vercel.app"
+        "item": "https://michaelbriones-dev.vercel.app"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "About",
-        "item": "https://kelly-portfolio-delta.vercel.app/about"
+        "item": "https://michaelbriones-dev.vercel.app/about"
       }
     ]
   };

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Services: AI Automation & Web Development | Michael Briones",
     description: "Explore AI integration, custom full-stack web applications, workflow automation scripting, and MVP development services built to optimize business operations.",
-    url: "https://kelly-portfolio-delta.vercel.app/services",
+    url: "https://michaelbriones-dev.vercel.app/services",
     siteName: "Michael Briones Portfolio",
     locale: "en_US",
     type: "website",
@@ -60,13 +60,13 @@ export default function ServicesPage() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://kelly-portfolio-delta.vercel.app"
+        "item": "https://michaelbriones-dev.vercel.app"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Services",
-        "item": "https://kelly-portfolio-delta.vercel.app/services"
+        "item": "https://michaelbriones-dev.vercel.app/services"
       }
     ]
   };

@@ -20,7 +20,7 @@ We have verified that the following key files exist and reviewed their contents:
   - *Starting Content*: Correctly configured to ignore `server.log` under the `# logs` block.
 - **[.lighthouserc.json](file:///C:/Users/Geloo/Downloads/kelly-porfolio/.lighthouserc.json)**:
   - *Status*: Exist.
-  - *Starting Content*: Correctly points to the production deployed URL `https://kelly-portfolio-delta.vercel.app/` for stable auditing.
+  - *Starting Content*: Correctly points to the production deployed URL `https://michaelbriones-dev.vercel.app/` for stable auditing.
 - **[.github/workflows/audit.yml](file:///C:/Users/Geloo/Downloads/kelly-porfolio/.github/workflows/audit.yml)**:
   - *Status*: Exist.
   - *Starting Content*: Standard GitHub Actions workflow running pnpm install, linting, type-checking, next build, lighthouse-ci-action, lychee link checking, and axe-cli accessibility tests.

@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: RouteProps): Promise<Metadata
     openGraph: {
       title: `${project.title} | Michael Briones Case Study`,
       description: project.problem,
-      url: `https://kelly-portfolio-delta.vercel.app/projects/${slug}`,
+      url: `https://michaelbriones-dev.vercel.app/projects/${slug}`,
       siteName: "Michael Briones Portfolio",
       locale: "en_US",
       type: "article",

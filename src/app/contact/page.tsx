@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Contact Michael Briones | Hire AI & Full-Stack Developer",
     description: "Request a consultation call or drop a message to build custom web applications, SaaS MVPs, automated pipelines, or integrate ChatGPT/OpenAI models.",
-    url: "https://kelly-portfolio-delta.vercel.app/contact",
+    url: "https://michaelbriones-dev.vercel.app/contact",
     siteName: "Michael Briones Portfolio",
     locale: "en_US",
     type: "website",
@@ -33,13 +33,13 @@ export default function ContactPage() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://kelly-portfolio-delta.vercel.app"
+        "item": "https://michaelbriones-dev.vercel.app"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Contact",
-        "item": "https://kelly-portfolio-delta.vercel.app/contact"
+        "item": "https://michaelbriones-dev.vercel.app/contact"
       }
     ]
   };

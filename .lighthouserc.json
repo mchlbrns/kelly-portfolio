@@ -2,7 +2,7 @@
   "ci": {
     "collect": {
       "url": [
-        "https://kelly-portfolio-delta.vercel.app/"
+        "https://michaelbriones-dev.vercel.app/"
       ]
     },
     "upload": {
@@ -10,3 +10,4 @@
     }
   }
 }
+

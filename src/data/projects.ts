@@ -29,7 +29,7 @@ export const projects: Project[] = [
     results: "Achieved a 98+ Lighthouse performance score, 100% WCAG accessibility compliance, and a 40% increase in direct client consultation inquiries.",
     clientValue: "Replaced tech jargon with high-impact business outcomes, establishing strong credibility that converts casual developer visitors into paying contract clients.",
     lessonsLearned: "Strict separation between static layouts and lazy-loaded client states is crucial for preventing hydration mismatches and maintaining fast Time to Interactive (TTI).",
-    liveUrl: "https://kelly-portfolio-delta.vercel.app",
+    liveUrl: "https://michaelbriones-dev.vercel.app",
     githubUrl: "https://github.com/mchlbrns/kelly-portfolio",
     imageUrl: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=1000",
     imageAlt: "Developer Portfolio Workspace",

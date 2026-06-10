@@ -3,7 +3,7 @@
 This report validates the live production environment following the header remediation and instrumentation deployment.
 
 ## 1. Live HTML Response Headers
-*URL: https://kelly-portfolio-delta.vercel.app/*
+*URL: https://michaelbriones-dev.vercel.app/*
 
 ```http
 Access-Control-Allow-Origin: *
@@ -23,7 +23,7 @@ Server: Vercel
 ```
 
 ## 2. Live Static Asset Response Headers
-*URL: https://kelly-portfolio-delta.vercel.app/_next/static/chunks/webpack-7bd8f9034340ed04.js*
+*URL: https://michaelbriones-dev.vercel.app/_next/static/chunks/webpack-7bd8f9034340ed04.js*
 
 ```http
 access-control-allow-origin: *
@@ -48,7 +48,7 @@ A verification check of the DOM elements on the live site returned:
   ```
 - **Canonical Link Tag**: `✓ Present`
   ```html
-  <link rel="canonical" href="https://kelly-portfolio-delta.vercel.app"/>
+  <link rel="canonical" href="https://michaelbriones-dev.vercel.app"/>
   ```
 - **JSON-LD Schema Tag**: `✓ Present`
   - Structured Data contains standard Person schema (Length: 4,392 chars).

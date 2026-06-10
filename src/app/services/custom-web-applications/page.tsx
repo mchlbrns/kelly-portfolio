@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Custom Web Applications & Next.js Development | Michael Briones",
     description: "Hire a full-stack developer to build custom Next.js, React, and Django web applications optimized for speed, access compliance, and lead conversion.",
-    url: "https://kelly-portfolio-delta.vercel.app/services/custom-web-applications",
+    url: "https://michaelbriones-dev.vercel.app/services/custom-web-applications",
     siteName: "Michael Briones Portfolio",
     locale: "en_US",
     type: "website",
@@ -47,19 +47,19 @@ export default function CustomWebApplicationsPage() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://kelly-portfolio-delta.vercel.app"
+        "item": "https://michaelbriones-dev.vercel.app"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Services",
-        "item": "https://kelly-portfolio-delta.vercel.app/services"
+        "item": "https://michaelbriones-dev.vercel.app/services"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "Custom Web Applications",
-        "item": "https://kelly-portfolio-delta.vercel.app/services/custom-web-applications"
+        "item": "https://michaelbriones-dev.vercel.app/services/custom-web-applications"
       }
     ]
   };

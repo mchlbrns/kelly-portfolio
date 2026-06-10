@@ -6,7 +6,7 @@ This document outlines the starting state of the `mchlbrns/kelly-portfolio` Next
 - **Framework**: Next.js 15.x
 - **React version**: 19.x
 - **Package Manager**: pnpm (v10.33.3) and npm lockfiles present
-- **Deployment Platform**: Vercel (https://kelly-portfolio-delta.vercel.app/)
+- **Deployment Platform**: Vercel (https://michaelbriones-dev.vercel.app/)
 
 ## 2. Identified Issues & Gaps
 

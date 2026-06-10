@@ -1,4 +1,4 @@
 User-Agent: *
 Allow: /
 
-Sitemap: https://kelly-portfolio-delta.vercel.app/sitemap.xml
+Sitemap: https://michaelbriones-dev.vercel.app/sitemap.xml

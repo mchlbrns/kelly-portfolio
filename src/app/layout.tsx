@@ -15,7 +15,7 @@ const inter = Inter({ subsets: ["latin"], display: "swap" });
 export const metadata: Metadata = {
   title: "Michael Briones | AI Automation & Full-Stack Developer",
   description: "AI automation & full-stack developer Michael Briones builds custom web apps, vector database integrations, and automated pipelines to cut operational costs.",
-  metadataBase: new URL("https://kelly-portfolio-delta.vercel.app"),
+  metadataBase: new URL("https://michaelbriones-dev.vercel.app"),
   alternates: {
     canonical: "/",
   },
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Michael Briones | AI Automation & Full-Stack Developer",
     description: "AI automation & full-stack developer Michael Briones builds custom web apps, vector database integrations, and automated pipelines to cut operational costs.",
-    url: "https://kelly-portfolio-delta.vercel.app",
+    url: "https://michaelbriones-dev.vercel.app",
     siteName: "Michael Briones Portfolio",
     locale: "en_US",
     type: "website",

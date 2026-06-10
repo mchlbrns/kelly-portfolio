@@ -3,10 +3,10 @@ import { projects } from "@/data/projects";
 export function JsonLd() {
   const personSchema = {
     "@type": "Person",
-    "@id": "https://kelly-portfolio-delta.vercel.app/#person",
+    "@id": "https://michaelbriones-dev.vercel.app/#person",
     name: "Michael Briones",
     jobTitle: "Freelance Full-Stack & AI Automation Developer",
-    url: "https://kelly-portfolio-delta.vercel.app",
+    url: "https://michaelbriones-dev.vercel.app",
     description: "Freelance full-stack & AI automation developer. I build custom Next.js web apps and workflow automations to help businesses cut costs and scale.",
     address: {
       "@type": "PostalAddress",
@@ -34,32 +34,32 @@ export function JsonLd() {
 
   const websiteSchema = {
     "@type": "WebSite",
-    "@id": "https://kelly-portfolio-delta.vercel.app/#website",
-    url: "https://kelly-portfolio-delta.vercel.app",
+    "@id": "https://michaelbriones-dev.vercel.app/#website",
+    url: "https://michaelbriones-dev.vercel.app",
     name: "Michael Briones | Freelance Full-Stack & AI Automation Developer",
     publisher: {
-      "@id": "https://kelly-portfolio-delta.vercel.app/#person"
+      "@id": "https://michaelbriones-dev.vercel.app/#person"
     }
   };
 
   const creativeWorks = projects.map((project) => ({
     "@type": "CreativeWork",
-    "@id": `https://kelly-portfolio-delta.vercel.app/#project-${project.slug}`,
+    "@id": `https://michaelbriones-dev.vercel.app/#project-${project.slug}`,
     name: project.title,
     genre: project.category,
     description: project.problem + " " + project.solution,
     creator: {
-      "@id": "https://kelly-portfolio-delta.vercel.app/#person"
+      "@id": "https://michaelbriones-dev.vercel.app/#person"
     },
     programmingLanguage: project.tech,
-    url: project.liveUrl || `https://kelly-portfolio-delta.vercel.app/projects/${project.slug}`
+    url: project.liveUrl || `https://michaelbriones-dev.vercel.app/projects/${project.slug}`
   }));
 
   const serviceSchema = {
     "@type": "ProfessionalService",
-    "@id": "https://kelly-portfolio-delta.vercel.app/#service",
+    "@id": "https://michaelbriones-dev.vercel.app/#service",
     name: "Michael Briones Development Services",
-    url: "https://kelly-portfolio-delta.vercel.app",
+    url: "https://michaelbriones-dev.vercel.app",
     image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=1200&h=630",
     description: "Freelance full-stack & AI automation developer. I build custom Next.js web apps and workflow automations to help businesses cut costs and scale.",
     address: {

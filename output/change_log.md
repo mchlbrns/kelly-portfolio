@@ -40,7 +40,7 @@ This log documents all modifications and enhancements made to resolve the identi
 - **Action**: Added `server.log` to [.gitignore](file:///C:/Users/Geloo/Downloads/kelly-porfolio/.gitignore) under a dedicated `# logs` section to prevent future tracking.
 
 ## 5. Stable Lighthouse CI Configuration (`.lighthouserc.json`)
-- **Action**: Modified [.lighthouserc.json](file:///C:/Users/Geloo/Downloads/kelly-porfolio/.lighthouserc.json) to audit the deployed URL (`https://kelly-portfolio-delta.vercel.app/`) directly. This resolves flakiness related to spawning the server locally in resource-constrained CI environments.
+- **Action**: Modified [.lighthouserc.json](file:///C:/Users/Geloo/Downloads/kelly-porfolio/.lighthouserc.json) to audit the deployed URL (`https://michaelbriones-dev.vercel.app/`) directly. This resolves flakiness related to spawning the server locally in resource-constrained CI environments.
 
 ## 6. Vercel Analytics and Speed Insights Integration
 - **Action**: Installed `@vercel/analytics` and `@vercel/speed-insights` packages.

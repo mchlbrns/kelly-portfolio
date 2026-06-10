@@ -49,11 +49,11 @@ This document verifies the validity and performance of the applied changes under
 
 ## 2. Production Deployment Status
 - **Vercel Deployment URL**: https://kelly-portfolio-mcno68azq-hackerako40-7396s-projects.vercel.app
-- **Production URL**: https://kelly-portfolio-delta.vercel.app/
+- **Production URL**: https://michaelbriones-dev.vercel.app/
 - **Status**: Ready (Successfully built in 42s on Vercel infrastructure).
 
 ## 3. Security Headers Verification
-A live HTTP head fetch on the production URL (`https://kelly-portfolio-delta.vercel.app/`) confirms that the headers are applied successfully:
+A live HTTP head fetch on the production URL (`https://michaelbriones-dev.vercel.app/`) confirms that the headers are applied successfully:
 
 | HTTP Header | Expected Value | Actual Value | Status |
 |---|---|---|---|

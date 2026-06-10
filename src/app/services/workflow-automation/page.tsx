@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Workflow Automation & Scripting Services | Michael Briones",
     description: "Hire a workflow automation specialist to build AutoHotkey macros, Selenium browser scripts, Google Sheets integrations, and Python scraping engines.",
-    url: "https://kelly-portfolio-delta.vercel.app/services/workflow-automation",
+    url: "https://michaelbriones-dev.vercel.app/services/workflow-automation",
     siteName: "Michael Briones Portfolio",
     locale: "en_US",
     type: "website",
@@ -47,19 +47,19 @@ export default function WorkflowAutomationPage() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://kelly-portfolio-delta.vercel.app"
+        "item": "https://michaelbriones-dev.vercel.app"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Services",
-        "item": "https://kelly-portfolio-delta.vercel.app/services"
+        "item": "https://michaelbriones-dev.vercel.app/services"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "Workflow Automation",
-        "item": "https://kelly-portfolio-delta.vercel.app/services/workflow-automation"
+        "item": "https://michaelbriones-dev.vercel.app/services/workflow-automation"
       }
     ]
   };
