@@ -3,15 +3,15 @@ import { ArrowLeft, Code2, CheckCircle, BookOpen } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Custom Web Applications & Next.js Development | Michael Briones",
-  description: "Hire a full-stack developer to build custom Next.js, React, and Django web applications optimized for speed, access compliance, and lead conversion.",
+  title: "Custom Next.js Web Development | Michael Briones",
+  description: "Build high-performance, secure web portals with Michael Briones. Expert Next.js for hire for founders needing scalable SaaS MVPs and tools.",
   keywords: ["Custom Web Applications", "Next.js 15 Development", "Full-Stack Web Development", "React Business Portals", "Django Backend Development", "API Integration Services", "Scalable Web Architecture", "Enterprise Web Solutions"],
   alternates: {
     canonical: "/services/custom-web-applications",
   },
   openGraph: {
-    title: "Custom Web Applications & Next.js Development | Michael Briones",
-    description: "Hire a full-stack developer to build custom Next.js, React, and Django web applications optimized for speed, access compliance, and lead conversion.",
+    title: "Custom Next.js Web Development | Michael Briones",
+    description: "Build high-performance, secure web portals with Michael Briones. Expert Next.js for hire for founders needing scalable SaaS MVPs and tools.",
     url: "https://michaelbriones-dev.vercel.app/services/custom-web-applications",
     siteName: "Michael Briones Portfolio",
     locale: "en_US",
@@ -19,8 +19,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Custom Web Applications & Next.js Development | Michael Briones",
-    description: "Hire a full-stack developer to build custom Next.js, React, and Django web applications optimized for speed, access compliance, and lead conversion.",
+    title: "Custom Next.js Web Development | Michael Briones",
+    description: "Build high-performance, secure web portals with Michael Briones. Expert Next.js for hire for founders needing scalable SaaS MVPs and tools.",
   },
 };
 

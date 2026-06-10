@@ -3,15 +3,15 @@ import { ArrowLeft, Layers, CheckCircle, BookOpen } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "MVP & SaaS Software Prototyping Services | Michael Briones",
-  description: "Hire an MVP developer to build full-stack SaaS prototypes, integrate Stripe billing, set up Supabase databases, and launch fast responsive web apps.",
+  title: "SaaS MVP Development for Founders | Michael Briones",
+  description: "Launch your SaaS faster. Michael Briones builds production-ready MVPs with secure auth, Stripe billing, and scalable Next.js architecture.",
   keywords: ["MVP Development", "SaaS Prototyping", "Next.js Startup Builder", "Stripe Integration", "Supabase Database Setup", "Full-Stack SaaS MVP", "Software Prototyping Services", "Rapid Application Development"],
   alternates: {
     canonical: "/services/mvp-development",
   },
   openGraph: {
-    title: "MVP & SaaS Software Prototyping Services | Michael Briones",
-    description: "Hire an MVP developer to build full-stack SaaS prototypes, integrate Stripe billing, set up Supabase databases, and launch fast responsive web apps.",
+    title: "SaaS MVP Development for Founders | Michael Briones",
+    description: "Launch your SaaS faster. Michael Briones builds production-ready MVPs with secure auth, Stripe billing, and scalable Next.js architecture.",
     url: "https://michaelbriones-dev.vercel.app/services/mvp-development",
     siteName: "Michael Briones Portfolio",
     locale: "en_US",
@@ -19,8 +19,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "MVP & SaaS Software Prototyping Services | Michael Briones",
-    description: "Hire an MVP developer to build full-stack SaaS prototypes, integrate Stripe billing, set up Supabase databases, and launch fast responsive web apps.",
+    title: "SaaS MVP Development for Founders | Michael Briones",
+    description: "Launch your SaaS faster. Michael Briones builds production-ready MVPs with secure auth, Stripe billing, and scalable Next.js architecture.",
   },
 };
 

@@ -3,11 +3,24 @@ import { ArrowLeft, RefreshCw, CheckCircle } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Legacy Systems Modernization Services | Michael Briones",
-  description: "Breathe new life into your aging software. We migrate legacy desktop systems to the cloud and optimize outdated SQL databases for 99.9% uptime.",
+  title: "Legacy Systems Modernization | Michael Briones",
+  description: "Migrate offline databases to the cloud with Michael Briones. Optimize slow SQL queries and modernize aging software for 99.9% uptime.",
   keywords: ["Legacy System Migration", "Database Optimization", "Cloud Migration", "SQL Server Optimization", "Modernizing Legacy Software", "Michael Briones"],
   alternates: {
     canonical: "/services/legacy-systems-modernization",
+  },
+  openGraph: {
+    title: "Legacy Systems Modernization | Michael Briones",
+    description: "Migrate offline databases to the cloud with Michael Briones. Optimize slow SQL queries and modernize aging software for 99.9% uptime.",
+    url: "https://michaelbriones-dev.vercel.app/services/legacy-systems-modernization",
+    siteName: "Michael Briones Portfolio",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Legacy Systems Modernization | Michael Briones",
+    description: "Migrate offline databases to the cloud with Michael Briones. Optimize slow SQL queries and modernize aging software for 99.9% uptime.",
   },
 };
 

@@ -4,10 +4,23 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "API Design & Integration Services | Michael Briones",
-  description: "Bespoke API design, third-party platform integrations (Stripe, Salesforce), and secure webhook listeners for synchronized business data.",
+  description: "Connect your stack seamlessly. Michael Briones designs secure REST/GraphQL APIs and webhooks for Stripe, Salesforce, and custom systems.",
   keywords: ["API Design", "Rest API Integration", "Webhook Development", "Third-party Integrations", "Stripe Integration", "Salesforce Integration", "Michael Briones"],
   alternates: {
     canonical: "/services/api-design-integration",
+  },
+  openGraph: {
+    title: "API Design & Integration Services | Michael Briones",
+    description: "Connect your stack seamlessly. Michael Briones designs secure REST/GraphQL APIs and webhooks for Stripe, Salesforce, and custom systems.",
+    url: "https://michaelbriones-dev.vercel.app/services/api-design-integration",
+    siteName: "Michael Briones Portfolio",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "API Design & Integration Services | Michael Briones",
+    description: "Connect your stack seamlessly. Michael Briones designs secure REST/GraphQL APIs and webhooks for Stripe, Salesforce, and custom systems.",
   },
 };
 

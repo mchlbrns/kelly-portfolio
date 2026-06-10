@@ -3,15 +3,15 @@ import { ArrowLeft, Workflow, CheckCircle, BookOpen } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Workflow Automation & Scripting Services | Michael Briones",
-  description: "Hire a workflow automation specialist to build AutoHotkey macros, Selenium browser scripts, Google Sheets integrations, and Python scraping engines.",
+  title: "Workflow Automation Specialist | Michael Briones",
+  description: "Reclaim 15+ hours weekly. Michael Briones develops custom AutoHotkey and Python automation to eliminate manual data entry human errors.",
   keywords: ["Workflow Automation", "AutoHotkey Scripting", "Selenium Browser Automation", "Python Web Scraping", "Business Process Automation", "Google Sheets Integration", "Telegram Bot Development", "Data Pipeline Automation"],
   alternates: {
     canonical: "/services/workflow-automation",
   },
   openGraph: {
-    title: "Workflow Automation & Scripting Services | Michael Briones",
-    description: "Hire a workflow automation specialist to build AutoHotkey macros, Selenium browser scripts, Google Sheets integrations, and Python scraping engines.",
+    title: "Workflow Automation Specialist | Michael Briones",
+    description: "Reclaim 15+ hours weekly. Michael Briones develops custom AutoHotkey and Python automation to eliminate manual data entry human errors.",
     url: "https://michaelbriones-dev.vercel.app/services/workflow-automation",
     siteName: "Michael Briones Portfolio",
     locale: "en_US",
@@ -19,8 +19,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Workflow Automation & Scripting Services | Michael Briones",
-    description: "Hire a workflow automation specialist to build AutoHotkey macros, Selenium browser scripts, Google Sheets integrations, and Python scraping engines.",
+    title: "Workflow Automation Specialist | Michael Briones",
+    description: "Reclaim 15+ hours weekly. Michael Briones develops custom AutoHotkey and Python automation to eliminate manual data entry human errors.",
   },
 };
 

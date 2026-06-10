@@ -3,15 +3,15 @@ import { ArrowLeft, Cpu, CheckCircle, BookOpen } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "AI Integration & LLM Automation Services | Michael Briones",
-  description: "Hire an AI automation developer to integrate OpenAI API, LangChain agents, pinecone vector RAG databases, and custom GPT models into your operations.",
+  title: "AI Automation & LLM Integration | Michael Briones",
+  description: "Scale your business with custom AI agents and RAG databases. Michael Briones builds automated OpenAI & LangChain pipelines for founders.",
   keywords: ["AI Automation", "LLM Integration", "OpenAI API Development", "LangChain Agents", "Retrieval-Augmented Generation", "Pinecone Vector Database", "AI Chatbot for Business", "Semantic Search Implementation"],
   alternates: {
     canonical: "/services/ai-automation",
   },
   openGraph: {
-    title: "AI Integration & LLM Automation Services | Michael Briones",
-    description: "Hire an AI automation developer to integrate OpenAI API, LangChain agents, pinecone vector RAG databases, and custom GPT models into your operations.",
+    title: "AI Automation & LLM Integration | Michael Briones",
+    description: "Scale your business with custom AI agents and RAG databases. Michael Briones builds automated OpenAI & LangChain pipelines for founders.",
     url: "https://michaelbriones-dev.vercel.app/services/ai-automation",
     siteName: "Michael Briones Portfolio",
     locale: "en_US",
@@ -19,8 +19,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Integration & LLM Automation Services | Michael Briones",
-    description: "Hire an AI automation developer to integrate OpenAI API, LangChain agents, pinecone vector RAG databases, and custom GPT models into your operations.",
+    title: "AI Automation & LLM Integration | Michael Briones",
+    description: "Scale your business with custom AI agents and RAG databases. Michael Briones builds automated OpenAI & LangChain pipelines for founders.",
   },
 };
 
