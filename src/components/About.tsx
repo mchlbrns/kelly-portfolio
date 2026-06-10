@@ -22,10 +22,10 @@ export function About() {
             </h2>
             <div className="space-y-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed font-medium">
               <p>
-                I am a full-stack engineer and AI automation specialist dedicated to building clean, secure web portals and operational integrations. By combining modern React systems with robust backends and custom scripting, I design custom software that streamlines how teams execute manual workflows.
+                I am an AI automation developer in Manila and a full-stack engineer dedicated to building clean, secure web portals and ROI-driven operational integrations. By combining modern React systems with robust backends and custom scripting, I design custom software that streamlines how teams execute manual workflows.
               </p>
               <p>
-                Whether you need a Next.js developer to launch a responsive customer portal, an MVP developer to iterate a new SaaS idea, or desktop scripting to automate system pipelines, I deliver production-ready code. I build custom solutions using Next.js, Django, Python, Selenium, and AutoHotkey to save hours of manual work weekly.
+                As a freelance developer in the Philippines, I help founders launch responsive Next.js portals, iterate on SaaS MVPs, and deploy desktop scripting that reclaims hours of manual work weekly. I build custom solutions using Next.js, Django, Python, Selenium, and AutoHotkey to save hours of manual work weekly.
               </p>
             </div>
           </m.div>

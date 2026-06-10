@@ -32,7 +32,7 @@ export const projects: Project[] = [
     liveUrl: "https://michaelbriones-dev.vercel.app",
     githubUrl: "https://github.com/mchlbrns/kelly-portfolio",
     imageUrl: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=1000",
-    imageAlt: "Developer Portfolio Workspace",
+    imageAlt: "Next.js Developer Portfolio Website showcasing business automation case studies and full-stack projects.",
   },
   {
     slug: "ai-customer-support",
@@ -47,7 +47,7 @@ export const projects: Project[] = [
     clientValue: "Saved staff over 20 hours a week in support load and drastically improved customer retention by providing instant, accurate 24/7 assistance.",
     lessonsLearned: "Prompt chaining and strict system prompts are more reliable than fine-tuning for preventing hallucinations when referencing structured internal policy manuals.",
     imageUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=1000",
-    imageAlt: "AI Customer Support Diagram",
+    imageAlt: "AI Automation Developer using LangChain and OpenAI to build an enterprise customer support agent.",
   },
   {
     slug: "excel-autohotkey-automation",
@@ -62,7 +62,7 @@ export const projects: Project[] = [
     clientValue: "Reclaimed 15 hours of human effort every week, allowing employees to redirect their focus to client onboarding and operations instead of manual data entry.",
     lessonsLearned: "Using AHK's COM Object interfaces is significantly faster and less prone to disruption than simulating keyboard shortcuts or mouse clicks on spreadsheet cell grids.",
     imageUrl: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000",
-    imageAlt: "Excel Spreadsheet Automation Illustration",
+    imageAlt: "Workflow Automation Developer using AutoHotkey and Excel to automate manual data entry pipelines.",
   },
   {
     slug: "google-sheets-telegram-chatbot",
@@ -77,6 +77,6 @@ export const projects: Project[] = [
     clientValue: "Provided technicians with instant inventory answers directly on their mobile phones, eliminating downtime at customer job sites.",
     lessonsLearned: "Implementing a simple TTL (time-to-live) cache layer for sheet reads dramatically reduced API usage costs and improved response times for frequent repeat queries.",
     imageUrl: "https://images.unsplash.com/photo-1614741118887-7a4ee193a5fa?auto=format&fit=crop&q=80&w=1000",
-    imageAlt: "Chatbot Automation Illustration",
+    imageAlt: "Python Freelance Developer building a Telegram Chatbot integrated with Google Sheets for inventory tracking.",
   }
 ];

@@ -50,10 +50,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=1200&h=630",
+        url: "https://michaelbriones-dev.vercel.app/avatar.png",
         width: 1200,
         height: 630,
-        alt: "Michael Briones | AI Automation & Full-Stack Developer Portfolio",
+        alt: "Michael Briones - AI Automation & Full-Stack Developer Portfolio",
       },
     ],
   },
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Michael Briones | AI Automation & Full-Stack Developer",
     description: "Hire an AI Automation & Full-Stack Developer in Manila, Philippines. I build custom MVPs and automated tools to help founders scale. Book a free consult now!",
-    images: ["https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80&w=1200&h=630"],
+    images: ["https://michaelbriones-dev.vercel.app/avatar.png"],
   },
 };
 

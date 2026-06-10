@@ -35,7 +35,7 @@ export function Hero() {
                   AI Automation & Full-Stack Developer
                 </span>
                 <span className="block text-xl md:text-2xl font-bold text-gray-500 dark:text-gray-400 mt-4 tracking-normal">
-                  Building custom web apps and workflow automations to streamline operations, cut costs, and scale your business.
+                  As a Next.js developer for hire, I build custom web apps and intelligent pipelines to help businesses scale and eliminate manual bottlenecks.
                 </span>
               </h1>
             </div>
@@ -88,7 +88,7 @@ export function Hero() {
                 <div className="relative w-full h-full rounded-[2rem] overflow-hidden">
                   <Image
                     src="/avatar.png"
-                    alt="Michael Briones - Full-Stack Developer & AI Specialist"
+                    alt="Michael Briones - AI Automation & Next.js Developer in Manila, Philippines"
                     fill
                     className="object-cover hover:scale-105 transition-transform duration-700 ease-out"
                     sizes="(max-width: 1024px) 100vw, 50vw"

@@ -48,7 +48,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'ai-automation',
     'custom-web-applications',
     'workflow-automation',
-    'mvp-development'
+    'mvp-development',
+    'api-design-integration',
+    'legacy-systems-modernization'
   ].map(service => ({
     url: `${baseUrl}/services/${service}`,
     lastModified,

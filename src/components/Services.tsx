@@ -62,8 +62,8 @@ const serviceLinks: Record<string, string> = {
   "Workflow Automation": "/services/workflow-automation",
   "AI & LLM Integration": "/services/ai-automation",
   "SaaS Product Development": "/services/mvp-development",
-  "API Design & Integration": "/services/custom-web-applications",
-  "Legacy Systems Modernization": "/services/custom-web-applications",
+  "API Design & Integration": "/services/api-design-integration",
+  "Legacy Systems Modernization": "/services/legacy-systems-modernization",
 };
 
 export function Services() {
