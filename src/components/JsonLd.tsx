@@ -12,6 +12,7 @@ export function JsonLd() {
     address: {
       "@type": "PostalAddress",
       addressLocality: "Quezon City",
+      addressRegion: "Metro Manila",
       addressCountry: "Philippines"
     },
     sameAs: [
@@ -69,9 +70,11 @@ export function JsonLd() {
     address: {
       "@type": "PostalAddress",
       addressLocality: "Quezon City",
+      addressRegion: "Metro Manila",
       addressCountry: "Philippines"
     },
-    priceRange: "$$",
+    telephone: "+639000000000", // Required for ProfessionalService
+    priceRange: "$$ - Competitive Pricing for Custom Automation & Web Apps",
     areaServed: "Worldwide",
     hasOfferCatalog: {
       "@type": "OfferCatalog",
@@ -145,21 +148,33 @@ export function JsonLd() {
       "author": { "@type": "Person", "name": "Sarah Jenkins" },
       "reviewBody": "Michael transformed our outdated system into a modern, lightning-fast application. The AI integration alone saved us 20 hours a week.",
       "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "datePublished": "2024-05-15"
+      "datePublished": "2024-05-15",
+      "itemReviewed": {
+        "@type": "ProfessionalService",
+        "name": "Michael Briones Development Services"
+      }
     },
     {
       "@type": "Review",
       "author": { "@type": "Person", "name": "Michael Chang" },
       "reviewBody": "Working with Michael was a game-changer. The communication was excellent, and the final product exceeded all our expectations.",
       "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "datePublished": "2024-03-10"
+      "datePublished": "2024-03-10",
+      "itemReviewed": {
+        "@type": "ProfessionalService",
+        "name": "Michael Briones Development Services"
+      }
     },
     {
       "@type": "Review",
       "author": { "@type": "Person", "name": "Orlando N." },
       "reviewBody": "Working with Michael was great!! He is very knowledgeable about AutoHotKey and was able to deliver exactly what I needed. He is very professional and respectful.",
       "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-      "datePublished": "2024-01-22"
+      "datePublished": "2024-01-22",
+      "itemReviewed": {
+        "@type": "ProfessionalService",
+        "name": "Michael Briones Development Services"
+      }
     }
   ];
 
