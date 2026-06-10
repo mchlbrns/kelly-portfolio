@@ -101,6 +101,7 @@ export function Navbar() {
     { name: "About", href: "/about", id: "about" },
     { name: "Services", href: "/services", id: "services" },
     { name: "Work", href: "/#work", id: "work" },
+    { name: "Blog", href: "/blog", id: "blog" },
     { name: "Resume", href: "/resume", id: "resume" },
     { name: "Contact", href: "/contact", id: "contact" },
   ];
