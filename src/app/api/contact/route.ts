@@ -83,7 +83,7 @@ export async function POST(req: Request) {
         body: JSON.stringify({ name, email, projectType, message, source: 'Portfolio Contact Form' }),
       });
     } else if (!resendApiKey) {
-      console.log('Form submission received:', { name, email, projectType, message });
+
     }
 
     return NextResponse.json(
