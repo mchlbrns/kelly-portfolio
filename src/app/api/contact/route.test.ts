@@ -1,91 +1,114 @@
-import { describe, it } from 'node:test';
-import assert from 'node:assert';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { POST } from './route';
 
-describe('POST /api/contact', () => {
-  it('should return 500 if an error occurs', async () => {
-    // We create a mock request object
-    const req = new Request('http://localhost/api/contact', {
-      method: 'POST',
-      body: JSON.stringify({}),
-    });
+// Mock Next.js NextResponse
+vi.mock('next/server', () => {
+  return {
+    NextResponse: {
+      json: vi.fn((body, init) => {
+        return new Response(JSON.stringify(body), {
+          status: init?.status || 200,
+          headers: { 'Content-Type': 'application/json' },
+        });
+      }),
+    },
+  };
+});
 
-    // Override the json method to throw an error to trigger the catch block
-    req.json = async () => {
-      throw new Error('Simulated error');
-    };
+describe('Contact API POST Route', () => {
+  let originalEnv: NodeJS.ProcessEnv;
 
-    // Silence console.error for clean test output
-    const originalConsoleError = console.error;
-    console.error = () => {};
-
-    try {
-      const response = await POST(req);
-
-      assert.strictEqual(response.status, 500);
-
-      const data = await response.json();
-      assert.deepStrictEqual(data, { error: 'Internal server error' });
-    } finally {
-      // Restore console.error
-      console.error = originalConsoleError;
-    }
+  beforeEach(() => {
+    vi.clearAllMocks();
+    originalEnv = process.env;
+    // Clear global fetch mock if any
+    global.fetch = vi.fn();
   });
 
-  it('should return 400 if required fields are missing', async () => {
-    const req = new Request('http://localhost/api/contact', {
-      method: 'POST',
-      body: JSON.stringify({ name: 'Test' }), // Missing email and message
-    });
-
-    // We need to provide json method since Next.js Request extends standard Request
-    // and standard Request reads stream only once.
-    req.json = async () => ({ name: 'Test' });
-
-    const response = await POST(req);
-
-    assert.strictEqual(response.status, 400);
-    const data = await response.json();
-    assert.deepStrictEqual(data, { error: 'Missing required fields' });
+  afterEach(() => {
+    process.env = originalEnv;
   });
 
-  it('should return 200 on success (no external calls made if missing env variables)', async () => {
-    // Temporarily unset env variables to avoid real fetch calls
-    const originalResendApiKey = process.env.RESEND_API_KEY;
-    const originalWebhookUrl = process.env.CONTACT_WEBHOOK_URL;
-    delete process.env.RESEND_API_KEY;
-    delete process.env.CONTACT_WEBHOOK_URL;
+  const createMockRequest = (body: any) => {
+    return new Request('http://localhost/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    });
+  };
 
-    // Silence console.log for clean test output
-    const originalConsoleLog = console.log;
-    console.log = () => {};
-
-    try {
-      const req = new Request('http://localhost/api/contact', {
-        method: 'POST',
-        body: JSON.stringify({
-          name: 'Test',
-          email: 'test@example.com',
-          message: 'Hello'
-        }),
-      });
-
-      req.json = async () => ({
-        name: 'Test',
+  describe('Validation Error Paths', () => {
+    it('should return 400 when missing name field', async () => {
+      const req = createMockRequest({
         email: 'test@example.com',
-        message: 'Hello'
+        message: 'Hello world',
       });
 
-      const response = await POST(req);
+      const res = await POST(req);
+      const data = await res.json();
 
-      assert.strictEqual(response.status, 200);
-      const data = await response.json();
-      assert.deepStrictEqual(data, { message: 'Message sent successfully' });
-    } finally {
-      // Restore
-      if (originalResendApiKey) process.env.RESEND_API_KEY = originalResendApiKey;
-      if (originalWebhookUrl) process.env.CONTACT_WEBHOOK_URL = originalWebhookUrl;
-      console.log = originalConsoleLog;
-    }
+      expect(res.status).toBe(400);
+      expect(data).toEqual({ error: 'Missing required fields' });
+    });
+
+    it('should return 400 when missing email field', async () => {
+      const req = createMockRequest({
+        name: 'John Doe',
+        message: 'Hello world',
+      });
+
+      const res = await POST(req);
+      const data = await res.json();
+
+      expect(res.status).toBe(400);
+      expect(data).toEqual({ error: 'Missing required fields' });
+    });
+
+    it('should return 400 when missing message field', async () => {
+      const req = createMockRequest({
+        name: 'John Doe',
+        email: 'test@example.com',
+      });
+
+      const res = await POST(req);
+      const data = await res.json();
+
+      expect(res.status).toBe(400);
+      expect(data).toEqual({ error: 'Missing required fields' });
+    });
+
+    it('should return 400 when body is empty', async () => {
+      const req = createMockRequest({});
+
+      const res = await POST(req);
+      const data = await res.json();
+
+      expect(res.status).toBe(400);
+      expect(data).toEqual({ error: 'Missing required fields' });
+    });
+  });
+
+  describe('Happy Path', () => {
+    it('should return 200 when all required fields are present', async () => {
+      // Setup successful fetch mock
+      global.fetch = vi.fn().mockResolvedValue({
+        ok: true,
+      });
+
+      const req = createMockRequest({
+        name: 'John Doe',
+        email: 'test@example.com',
+        message: 'Hello world',
+        projectType: 'Web Development',
+      });
+
+      const res = await POST(req);
+      const data = await res.json();
+
+      expect(res.status).toBe(200);
+      expect(data).toEqual({ message: 'Message sent successfully' });
+    });
   });
 });
