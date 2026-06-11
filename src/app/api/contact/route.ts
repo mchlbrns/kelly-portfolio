@@ -80,8 +80,17 @@ export async function POST(req: Request) {
       }
     }
 
-    if (!resendApiKey) {
-            console.log('Form submission received. Data omitted for privacy.');
+    // Webhook implementation (if active)
+    const webhookUrl = process.env.CONTACT_WEBHOOK_URL;
+
+    if (webhookUrl) {
+      await fetch(webhookUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, projectType, message, source: 'Portfolio Contact Form' }),
+      });
+    } else if (!resendApiKey) {
+
     }
 
     return NextResponse.json(
