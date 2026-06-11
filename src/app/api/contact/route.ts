@@ -1,17 +1,24 @@
 import { NextResponse } from 'next/server';
+import { contactSchema } from '@/app/actions/contactSchema';
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { name, email, projectType, message } = body;
 
-    // Validate inputs
-    if (!name || !email || !message) {
+    // Validate inputs using Zod schema
+    const validatedData = contactSchema.safeParse(body);
+
+    if (!validatedData.success) {
       return NextResponse.json(
-        { error: 'Missing required fields' },
+        {
+          error: 'Invalid input data',
+          details: validatedData.error.flatten().fieldErrors
+        },
         { status: 400 }
       );
     }
+
+    const { name, email, projectType, message } = validatedData.data;
 
     // Dispath notification email via Resend if API key is present
     const resendApiKey = process.env.RESEND_API_KEY;
