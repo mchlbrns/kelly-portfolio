@@ -1,17 +1,24 @@
 import { NextResponse } from 'next/server';
+import { contactSchema } from '@/app/actions/contactSchema';
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { name, email, projectType, message } = body;
 
-    // Validate inputs
-    if (!name || !email || !message) {
+    // Validate inputs using Zod schema
+    const validatedData = contactSchema.safeParse(body);
+
+    if (!validatedData.success) {
       return NextResponse.json(
-        { error: 'Missing required fields' },
+        {
+          error: 'Invalid input data',
+          details: validatedData.error.flatten().fieldErrors
+        },
         { status: 400 }
       );
     }
+
+    const { name, email, projectType, message } = validatedData.data;
 
     // Dispath notification email via Resend if API key is present
     const resendApiKey = process.env.RESEND_API_KEY;
@@ -73,17 +80,8 @@ export async function POST(req: Request) {
       }
     }
 
-    // Webhook implementation (if active)
-    const webhookUrl = process.env.CONTACT_WEBHOOK_URL;
-
-    if (webhookUrl) {
-      await fetch(webhookUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, projectType, message, source: 'Portfolio Contact Form' }),
-      });
-    } else if (!resendApiKey) {
-      console.log('Form submission received:', { name, email, projectType, message });
+    if (!resendApiKey) {
+            console.log('Form submission received. Data omitted for privacy.');
     }
 
     return NextResponse.json(
