@@ -8,7 +8,7 @@ A modern, high-performance developer portfolio built to function as a client-acq
 - **Tailwind CSS & Framer Motion:** Beautiful styling and smooth, subtle micro-interactions.
 - **Dark/Light Mode:** Full support for system-preference or user-toggled themes.
 - **Responsive Design:** Mobile-first approach ensuring a great experience on any device.
-- **Contact API Route:** Built-in endpoint (`/api/contact`) ready to be connected to Webhooks, Google Sheets, or email providers.
+- **Contact API Route:** Built-in endpoint (`/api/contact`) ready to be connected to email providers like Resend.
 - **Calendly Integration:** Easily connect your scheduling link via environment variables.
 
 ## Tech Stack
@@ -33,8 +33,9 @@ Create a `.env.local` file in the root directory and add the following variables
 # URL for your Calendly booking page (used in the Hero section CTA)
 NEXT_PUBLIC_CALENDLY_URL=https://calendly.com/your-link
 
-# Webhook URL to receive contact form submissions (e.g., Make, Zapier, or a custom endpoint)
-CONTACT_WEBHOOK_URL=https://hook.your-service.com/xxxx
+# Optional: Resend API Key and Contact Email for form submissions
+# RESEND_API_KEY=re_xxx...
+# CONTACT_EMAIL_TO=youremail@example.com
 ```
 
 ### Installation
