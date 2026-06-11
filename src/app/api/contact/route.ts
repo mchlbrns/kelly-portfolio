@@ -1,17 +1,28 @@
 import { NextResponse } from 'next/server';
+import { z } from 'zod';
+
+const contactSchema = z.object({
+  name: z.string().min(1, 'Name is required').max(100, 'Name is too long'),
+  email: z.string().email('Invalid email address').max(255, 'Email is too long'),
+  projectType: z.string().max(100, 'Project type is too long').optional(),
+  message: z.string().min(1, 'Message is required').max(5000, 'Message is too long'),
+});
 
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { name, email, projectType, message } = body;
 
-    // Validate inputs
-    if (!name || !email || !message) {
+    // Validate inputs using Zod
+    const result = contactSchema.safeParse(body);
+
+    if (!result.success) {
       return NextResponse.json(
-        { error: 'Missing required fields' },
+        { error: 'Invalid input data', details: result.error.format() },
         { status: 400 }
       );
     }
+
+    const { name, email, projectType, message } = result.data;
 
     // Dispath notification email via Resend if API key is present
     const resendApiKey = process.env.RESEND_API_KEY;
@@ -83,7 +94,8 @@ export async function POST(req: Request) {
         body: JSON.stringify({ name, email, projectType, message, source: 'Portfolio Contact Form' }),
       });
     } else if (!resendApiKey) {
-      console.log('Form submission received. Project type:', projectType);
+     
+      console.log('Form submission received. Data omitted for privacy.');
     }
 
     return NextResponse.json(
