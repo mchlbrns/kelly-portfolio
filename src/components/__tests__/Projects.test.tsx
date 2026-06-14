@@ -1,15 +1,16 @@
 import { render, screen, fireEvent } from "@testing-library/react";
+import { describe, it, expect, vi, beforeAll } from "vitest";
 import { Projects } from "../Projects";
 
 // Mock intersection observer for Framer Motion
 beforeAll(() => {
-  const mockIntersectionObserver = jest.fn();
+  const mockIntersectionObserver = vi.fn();
   mockIntersectionObserver.mockReturnValue({
     observe: () => null,
     unobserve: () => null,
     disconnect: () => null,
   });
-  window.IntersectionObserver = mockIntersectionObserver;
+  window.IntersectionObserver = mockIntersectionObserver as unknown as typeof window.IntersectionObserver;
 });
 
 describe("Projects Component", () => {

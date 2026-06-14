@@ -12,9 +12,17 @@ vi.mock("lucide-react", () => ({
 
 // Mock framer-motion to simplify testing
 vi.mock("framer-motion", () => {
-  const MockComponent = ({ children, ...props }: any) => {
-    const { initial, animate, exit, whileHover, whileTap, whileInView, viewport, transition, ...validProps } = props;
-    return <div {...validProps}>{children}</div>;
+  const MockComponent = ({ children, ...props }: { children: React.ReactNode; [key: string]: unknown }) => {
+    const validProps = { ...(props as Record<string, unknown>) };
+    delete validProps.initial;
+    delete validProps.animate;
+    delete validProps.exit;
+    delete validProps.whileHover;
+    delete validProps.whileTap;
+    delete validProps.whileInView;
+    delete validProps.viewport;
+    delete validProps.transition;
+    return <div {...(validProps as React.HTMLAttributes<HTMLDivElement>)}>{children}</div>;
   };
   return {
     m: {
@@ -23,14 +31,14 @@ vi.mock("framer-motion", () => {
       p: MockComponent,
       button: MockComponent,
     },
-    AnimatePresence: ({ children }: any) => <>{children}</>,
+    AnimatePresence: ({ children }: { children: React.ReactNode }) => <>{children}</>,
   };
 });
 
 // Define mock data for action
-let mockFormAction = vi.fn();
+const mockFormAction = vi.fn();
 let mockIsPending = false;
-let mockState: any = { status: "idle" };
+let mockState: Record<string, unknown> = { status: "idle" };
 
 // Because React 19 testing with JSDOM and testing-library can throw errors regarding transitions
 // and `useActionState` without experimental support properly configured, it's safer and fully correct
