@@ -29,7 +29,7 @@ describe('Contact API POST Route', () => {
     process.env = originalEnv;
   });
 
-  const createMockRequest = (body: any) => {
+  const createMockRequest = (body: Record<string, unknown>) => {
     return new Request('http://localhost/api/contact', {
       method: 'POST',
       headers: {
@@ -50,7 +50,8 @@ describe('Contact API POST Route', () => {
       const data = await res.json();
 
       expect(res.status).toBe(400);
-      expect(data).toEqual({ error: 'Missing required fields' });
+      expect(data.error).toBe('Invalid input data');
+      expect(data.details).toHaveProperty('name');
     });
 
     it('should return 400 when missing email field', async () => {
@@ -63,7 +64,8 @@ describe('Contact API POST Route', () => {
       const data = await res.json();
 
       expect(res.status).toBe(400);
-      expect(data).toEqual({ error: 'Missing required fields' });
+      expect(data.error).toBe('Invalid input data');
+      expect(data.details).toHaveProperty('email');
     });
 
     it('should return 400 when missing message field', async () => {
@@ -76,7 +78,8 @@ describe('Contact API POST Route', () => {
       const data = await res.json();
 
       expect(res.status).toBe(400);
-      expect(data).toEqual({ error: 'Missing required fields' });
+      expect(data.error).toBe('Invalid input data');
+      expect(data.details).toHaveProperty('message');
     });
 
     it('should return 400 when body is empty', async () => {
@@ -86,7 +89,10 @@ describe('Contact API POST Route', () => {
       const data = await res.json();
 
       expect(res.status).toBe(400);
-      expect(data).toEqual({ error: 'Missing required fields' });
+      expect(data.error).toBe('Invalid input data');
+      expect(data.details).toHaveProperty('name');
+      expect(data.details).toHaveProperty('email');
+      expect(data.details).toHaveProperty('message');
     });
   });
 
